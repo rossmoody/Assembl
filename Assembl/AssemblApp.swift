@@ -1,17 +1,12 @@
-//
-//  AssemblApp.swift
-//  Assembl
-//
-//  Created by Ross Moody on 5/11/22.
-//
-
 import SwiftUI
 
 @main
 struct AssemblApp: App {
+    @NSApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Button("Test"){}.padding()
         }
     }
 }
