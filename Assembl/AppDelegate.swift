@@ -2,16 +2,16 @@ import Foundation
 import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var statusBarItem: NSStatusItem!
+    var statusItem: NSStatusItem!
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         let statusBar = NSStatusBar.system
         let statusBarMenu = NSMenu(title: "Assembl")
         
-        statusBarItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
-        statusBarItem.button?.title = "🌯"
-        statusBarItem.button?.toolTip = "Assembl App"
-        statusBarItem.menu = statusBarMenu
+        statusItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
+        statusItem.button?.title = "🌯"
+        statusItem.button?.toolTip = "Assembl App"
+        statusItem.menu = statusBarMenu
         
         statusBarMenu.insertItem(withTitle: "Preferences",
                                  action: #selector(AppDelegate.orderABurrito),
