@@ -18,3 +18,11 @@ func with<T>(_ item: T, update: (inout T) throws -> Void) rethrows -> T {
     try update(&this)
     return this
 }
+
+/**
+ Convenience function for referencing localized strings
+ */
+func loc(_ key: String, _ comment: String) -> String {
+    return NSLocalizedString(key, comment: comment)
+}
+

@@ -10,6 +10,8 @@
 		CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C533C283042A1008E02B8 /* KeyboardShortcuts */; };
 		CE3C533F283042D7008E02B8 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C533E283042D7008E02B8 /* Events.swift */; };
 		CE49FD282830B73700B0B72A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD272830B73700B0B72A /* Constants.swift */; };
+		CE49FD2E28316EA100B0B72A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD2D28316EA100B0B72A /* Preferences.swift */; };
+		CE49FD3028316FE500B0B72A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE49FD2F28316FE500B0B72A /* Localizable.strings */; };
 		CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71958282CC0C6006F889E /* AssemblApp.swift */; };
 		CEA7195D282CC0C9006F889E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195C282CC0C9006F889E /* Assets.xcassets */; };
 		CEA71960282CC0C9006F889E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195F282CC0C9006F889E /* Preview Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		CE3C533E283042D7008E02B8 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		CE49FD272830B73700B0B72A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE49FD2D28316EA100B0B72A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		CE49FD2F28316FE500B0B72A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CEA71955282CC0C6006F889E /* Assembl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assembl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA71958282CC0C6006F889E /* AssemblApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblApp.swift; sourceTree = "<group>"; };
 		CEA7195C282CC0C9006F889E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,9 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
+				CE49FD2D28316EA100B0B72A /* Preferences.swift */,
 				CE3C533E283042D7008E02B8 /* Events.swift */,
 				CE49FD272830B73700B0B72A /* Constants.swift */,
 				CEC4A5C6283095DB00E2C5CB /* Menu.swift */,
+				CE49FD2F28316FE500B0B72A /* Localizable.strings */,
 				CEA71989282DFAB5006F889E /* AppDelegate.swift */,
 				CEC4A5C42830755A00E2C5CB /* Utilities.swift */,
 				CEA7195C282CC0C9006F889E /* Assets.xcassets */,
@@ -254,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA71960282CC0C9006F889E /* Preview Assets.xcassets in Resources */,
+				CE49FD3028316FE500B0B72A /* Localizable.strings in Resources */,
 				CEA7195D282CC0C9006F889E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +290,7 @@
 				CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */,
 				CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */,
 				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
+				CE49FD2E28316EA100B0B72A /* Preferences.swift in Sources */,
 				CEC4A5C7283095DB00E2C5CB /* Menu.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
 			);

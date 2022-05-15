@@ -4,7 +4,7 @@ import KeyboardShortcuts
 extension AppDelegate {
     func setupEvents() {
         KeyboardShortcuts.onKeyUp(for: .shortcut) {
-            print(Constants.AppName)
+            print(loc("ASSEMBL", "App name"))
         }
     }
 }
