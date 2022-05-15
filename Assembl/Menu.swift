@@ -48,9 +48,7 @@ final class Menu: NSMenu, NSMenuDelegate {
         print("Ordering a burrito!")
     }
     
-    
     @objc private func openPreferences() {
         NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
     }
 }
-

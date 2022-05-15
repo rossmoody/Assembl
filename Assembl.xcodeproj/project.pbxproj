@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C533C283042A1008E02B8 /* KeyboardShortcuts */; };
-		CE3C533F283042D7008E02B8 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C533E283042D7008E02B8 /* Events.swift */; };
 		CE49FD282830B73700B0B72A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD272830B73700B0B72A /* Constants.swift */; };
 		CE49FD2E28316EA100B0B72A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD2D28316EA100B0B72A /* Preferences.swift */; };
 		CE49FD3028316FE500B0B72A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE49FD2F28316FE500B0B72A /* Localizable.strings */; };
@@ -41,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE3C533E283042D7008E02B8 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		CE49FD272830B73700B0B72A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE49FD2D28316EA100B0B72A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		CE49FD2F28316FE500B0B72A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			children = (
 				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
 				CE49FD2D28316EA100B0B72A /* Preferences.swift */,
-				CE3C533E283042D7008E02B8 /* Events.swift */,
 				CE49FD272830B73700B0B72A /* Constants.swift */,
 				CEC4A5C6283095DB00E2C5CB /* Menu.swift */,
 				CE49FD2F28316FE500B0B72A /* Localizable.strings */,
@@ -286,7 +283,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE3C533F283042D7008E02B8 /* Events.swift in Sources */,
 				CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */,
 				CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */,
 				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
