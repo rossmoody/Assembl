@@ -1,33 +1,17 @@
-import Foundation
 import Cocoa
+import KeyboardShortcuts
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var statusItem: NSStatusItem!
     
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        let statusBar = NSStatusBar.system
-        let statusBarMenu = NSMenu(title: "Assembl")
-        
-        statusItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
-        statusItem.button?.title = "🌯"
-        statusItem.button?.toolTip = "Assembl App"
-        statusItem.menu = statusBarMenu
-        
-        statusBarMenu.insertItem(withTitle: "Preferences",
-                                 action: #selector(AppDelegate.orderABurrito),
-                                 keyEquivalent: "",
-                                 at: 0)
-        
-        statusBarMenu.insertItem(.separator(), at: 1)
-        
-        statusBarMenu.insertItem(withTitle: "Quit",
-                                 action: #selector(AppDelegate.orderABurrito),
-                                 keyEquivalent: "",
-                                 at: 2)
+    lazy var statusItem = with(NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)) {
+        $0.button?.title = "🌯"
+        $0.button?.toolTip = Constants.AppName
+        $0.menu = Menu(title: Constants.AppName)
     }
     
-    @objc func orderABurrito() {
-        print("Ordering a burrito!")
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        _ = statusItem.button
+        setupEvents()
     }
 }
 

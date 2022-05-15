@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C533C283042A1008E02B8 /* KeyboardShortcuts */; };
+		CE3C533F283042D7008E02B8 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C533E283042D7008E02B8 /* Events.swift */; };
+		CE49FD282830B73700B0B72A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD272830B73700B0B72A /* Constants.swift */; };
 		CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71958282CC0C6006F889E /* AssemblApp.swift */; };
 		CEA7195D282CC0C9006F889E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195C282CC0C9006F889E /* Assets.xcassets */; };
 		CEA71960282CC0C9006F889E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195F282CC0C9006F889E /* Preview Assets.xcassets */; };
@@ -14,6 +17,8 @@
 		CEA71975282CC0C9006F889E /* AssemblUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71974282CC0C9006F889E /* AssemblUITests.swift */; };
 		CEA71977282CC0C9006F889E /* AssemblUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */; };
 		CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71989282DFAB5006F889E /* AppDelegate.swift */; };
+		CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C42830755A00E2C5CB /* Utilities.swift */; };
+		CEC4A5C7283095DB00E2C5CB /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C6283095DB00E2C5CB /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE3C533E283042D7008E02B8 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		CE49FD272830B73700B0B72A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEA71955282CC0C6006F889E /* Assembl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assembl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA71958282CC0C6006F889E /* AssemblApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblApp.swift; sourceTree = "<group>"; };
 		CEA7195C282CC0C9006F889E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +52,8 @@
 		CEA71974282CC0C9006F889E /* AssemblUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblUITests.swift; sourceTree = "<group>"; };
 		CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEA71989282DFAB5006F889E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEC4A5C42830755A00E2C5CB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		CEC4A5C6283095DB00E2C5CB /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
+				CE3C533E283042D7008E02B8 /* Events.swift */,
+				CE49FD272830B73700B0B72A /* Constants.swift */,
+				CEC4A5C6283095DB00E2C5CB /* Menu.swift */,
 				CEA71989282DFAB5006F889E /* AppDelegate.swift */,
+				CEC4A5C42830755A00E2C5CB /* Utilities.swift */,
 				CEA7195C282CC0C9006F889E /* Assets.xcassets */,
 				CEA71961282CC0C9006F889E /* Assembl.entitlements */,
 				CEA7195E282CC0C9006F889E /* Preview Content */,
@@ -145,6 +159,9 @@
 			dependencies = (
 			);
 			name = Assembl;
+			packageProductDependencies = (
+				CE3C533C283042A1008E02B8 /* KeyboardShortcuts */,
+			);
 			productName = Assembl;
 			productReference = CEA71955282CC0C6006F889E /* Assembl.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +234,9 @@
 				Base,
 			);
 			mainGroup = CEA7194C282CC0C6006F889E;
+			packageReferences = (
+				CE3C533B283042A1008E02B8 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
 			productRefGroup = CEA71956282CC0C6006F889E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3C533F283042D7008E02B8 /* Events.swift in Sources */,
 				CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */,
 				CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */,
+				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
+				CEC4A5C7283095DB00E2C5CB /* Menu.swift in Sources */,
+				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +600,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE3C533B283042A1008E02B8 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE3C533C283042A1008E02B8 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE3C533B283042A1008E02B8 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEA7194D282CC0C6006F889E /* Project object */;
 }
