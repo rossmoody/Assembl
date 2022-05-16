@@ -1,5 +1,5 @@
 import SwiftUI
-import KeyboardShortcuts
+import Cocoa
 
 @main
 struct AssemblApp: App {
@@ -11,5 +11,3 @@ struct AssemblApp: App {
         }
     }
 }
-
-

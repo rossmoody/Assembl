@@ -16,9 +16,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func setupEvents() {
         KeyboardShortcuts.onKeyUp(for: .shortcut) {
-            let window = NSApplication.shared.windows[0]
-            print(window)
+           print("test")
         }
     }
 }
+
+
+
+
 
