@@ -14,14 +14,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setupEvents()
     }
     
+    /**
+     State of app accessibility permissions in system preferences
+     */
+    var accessibilityPermission: Bool {
+        get {
+            let options : NSDictionary = [kAXTrustedCheckOptionPrompt.takeRetainedValue() as NSString: true]
+            let result = AXIsProcessTrustedWithOptions(options)
+            return result
+        }
+    }
+    
     private func setupEvents() {
         KeyboardShortcuts.onKeyUp(for: .shortcut) {
-           print("test")
+            print("Permission: \(self.accessibilityPermission)")
+            let options = CGWindowListOption([.optionOnScreenOnly, .excludeDesktopElements])
+            let windows = CGWindowListCopyWindowInfo(options, kCGNullWindowID) as! [Dictionary<String, Any>]
+            
+            for window in windows {
+                if let processId = window[kCGWindowOwnerPID as String] as? Int32 {
+                    var elementAttributes: AnyObject?
+                    let appRef = AXUIElementCreateApplication(processId)
+                    let error = AXUIElementCopyAttributeValue(appRef, NSAccessibility.Attribute.windows as CFString, &elementAttributes)
+                    if error == .success {
+                        print(elementAttributes.debugDescription)
+                    }
+                }
+            }
         }
     }
 }
-
-
-
-
-
