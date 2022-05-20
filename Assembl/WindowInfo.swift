@@ -7,7 +7,7 @@ struct WindowInfo {
     let layer: CFNumber
     let sharingState: CFNumber
     let alpha: CFNumber
-    let bounds: CGRect
+    let bounds: CGRect?
     let ownerName: CFString
     
     init(of window: Dictionary<String, Any>) {
@@ -17,7 +17,7 @@ struct WindowInfo {
         layer = window[kCGWindowLayer as String] as! CFNumber
         sharingState = window[kCGWindowSharingState as String] as! CFNumber
         alpha = window[kCGWindowAlpha as String] as! CFNumber
-        bounds = CGRect.init(dictionaryRepresentation: window[kCGWindowBounds as String] as! CFDictionary) ?? CGRect.init()
+        bounds = CGRect.init(dictionaryRepresentation: window[kCGWindowBounds as String] as! CFDictionary)
         ownerName = window[kCGWindowOwnerName as String] as! CFString
     }
     

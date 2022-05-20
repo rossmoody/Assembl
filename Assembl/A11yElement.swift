@@ -13,7 +13,7 @@ struct A11yElement {
     
     /**
      Applications can include multiple windows in an array based on pid. This loops through
-     all unique processIds and returns an array of valid window objects of an application as A11yElements
+     all unique processIds and returns an array of valid window objects of an application
      */
     static var allWindows: [A11yElement] {
         get {
@@ -25,10 +25,8 @@ struct A11yElement {
                 let result = AXUIElementCopyAttributeValue(application,
                                                            kAXWindowsAttribute as CFString,
                                                            &windows)
-                
                 if result == .success {
                     let windowsArr = windows as! [AXUIElement]
-                    
                     if !windowsArr.isEmpty {
                         elements.append(contentsOf: windowsArr.map{ A11yElement($0) })
                     }
@@ -38,27 +36,41 @@ struct A11yElement {
             return elements
         }
     }
+    
+    var title: String {
+        get {
+            var title: CFTypeRef?
+            AXUIElementCopyAttributeValue(self.element, kAXTitleAttribute as CFString, &title)
+            return title as! String
+        }
+    }
+    
+    var position: CGPoint {
+        get {
+            var position = CGPoint.init()
+            var positionRef: CFTypeRef?
+            
+            let result = AXUIElementCopyAttributeValue(self.element, kAXPositionAttribute as CFString, &positionRef)
+            if result == .success {
+                AXValueGetValue(positionRef as! AXValue, .cgPoint, &position)
+            }
+            
+            return position
+        }
+    }
+    
+    var size: CGSize {
+        get {
+            var size = CGSize.init()
+            var sizeRef: CFTypeRef?
+            
+            let result = AXUIElementCopyAttributeValue(self.element, kAXSizeAttribute as CFString, &sizeRef)
+            if result == .success {
+                AXValueGetValue(sizeRef as! AXValue, .cgSize, &size)
+            }
+            
+            return size
+        }
+    }
 }
-
-//            var positionRef: CFTypeRef?
-//            var sizeRef: CFTypeRef?
-//            var title: CFTypeRef?
-//
-//            AXUIElementCopyAttributeValue(self.element, kAXPositionAttribute as CFString, &positionRef)
-//            AXUIElementCopyAttributeValue(self.element, kAXSizeAttribute as CFString, &sizeRef)
-//            AXUIElementCopyAttributeValue(self.element, kAXTitleAttribute as CFString, &title)
-//
-//            var position: CGPoint?
-//            var size: CGSize?
-//
-//            if let positionRef = positionRef {
-//                AXValueGetValue(positionRef as! AXValue, .cgPoint, &position)
-//            }
-//
-//            if let sizeRef = sizeRef {
-//                AXValueGetValue(sizeRef as! AXValue, .cgSize, &size)
-//            }
-//
-//            print(positionRef, sizeRef)
-//            return "Test"
 
