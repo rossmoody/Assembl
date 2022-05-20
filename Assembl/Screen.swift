@@ -5,7 +5,11 @@ class Screen {
     /**
      The screen that is most likely to be the currently focused
      */
-    private let activeScreen = NSScreen.main ?? NSScreen.screens[0]
+    private let activeScreen: NSScreen
+    
+    init() {
+        self.activeScreen = NSScreen.main ?? NSScreen.screens[0]
+    }
     
     /**
      The full screen rectangle at the current resolution including

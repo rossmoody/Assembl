@@ -27,20 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func setupEvents() {
         KeyboardShortcuts.onKeyUp(for: .shortcut) {
-            print("Permission: \(self.accessibilityPermission)")
-            let options = CGWindowListOption([.optionOnScreenOnly, .excludeDesktopElements])
-            let windows = CGWindowListCopyWindowInfo(options, kCGNullWindowID) as! [Dictionary<String, Any>]
-            
-            for window in windows {
-                if let processId = window[kCGWindowOwnerPID as String] as? Int32 {
-                    var elementAttributes: AnyObject?
-                    let appRef = AXUIElementCreateApplication(processId)
-                    let error = AXUIElementCopyAttributeValue(appRef, NSAccessibility.Attribute.windows as CFString, &elementAttributes)
-                    if error == .success {
-                        print(elementAttributes.debugDescription)
-                    }
-                }
-            }
+            print(A11yElement.allWindows)
         }
     }
 }
