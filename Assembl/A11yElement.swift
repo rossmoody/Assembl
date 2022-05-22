@@ -1,9 +1,14 @@
 import Foundation
 import Cocoa
 
-struct A11yElement {
+/**
+ An A11yElement is a proxy for controlling, moving, and resizing windows in a given view. It uses the
+ accessibility API to control the given window as an AXUIElement. Each A11yElement.element instance
+ property represents a window in view.
+ */
+class A11yElement {
     /**
-     The accessibility elements representing a window that can be moved and resized
+     The accessibility element proxy that represents a window that directs size and position updates
      */
     var element: AXUIElement
     
@@ -11,66 +16,167 @@ struct A11yElement {
         self.element = element
     }
     
+    var title: String? {
+        get {
+            copyAttributeValue(of: kAXTitleAttribute)
+        }
+    }
+    
+    var role: String? {
+        get {
+            copyAttributeValue(of: kAXRoleAttribute)
+        }
+    }
+    
+    var isWindow: Bool {
+        get {
+            return self.role == kAXWindowRole
+        }
+    }
+    
+    var isMinimized: Bool? {
+        get {
+            copyAttributeValue(of: kAXMinimizedAttribute)
+        }
+    }
+    
+    var isHidden: Bool? {
+        get {
+            copyAttributeValue(of: kAXHiddenAttribute)
+        }
+    }
+    
+    var isResizable: Bool {
+        get {
+            var resizable: DarwinBoolean = true
+            AXUIElementIsAttributeSettable(self.element, kAXSizeAttribute as CFString, &resizable)
+            return resizable.boolValue
+        }
+    }
+    
+    var position: CGPoint? {
+        get {
+            if let result: AXValue = copyAttributeValue(of: kAXPositionAttribute) {
+                var positionPointer = CGPoint.init()
+                AXValueGetValue(result, .cgPoint, &positionPointer)
+                return positionPointer
+            }
+            return nil
+        }
+    }
+    
+    var size: CGSize? {
+        get {
+            if let result: AXValue = copyAttributeValue(of: kAXSizeAttribute) {
+                var sizePointer = CGSize.init()
+                AXValueGetValue(result, .cgSize, &sizePointer)
+                return sizePointer
+            }
+            return nil
+        }
+    }
+    
+    var rect: CGRect? {
+        get {
+            if let position = position as CGPoint?, let size = size as CGSize? {
+                return CGRect.init(origin: position, size: size)
+            }
+            return nil
+        }
+    }
+    
+    var isFullScreen: Bool {
+        get {
+            var fullscreen = false
+            var fullScreenBtnEle: CFTypeRef?
+            let result = AXUIElementCopyAttributeValue(self.element,
+                                                       kAXFullScreenButtonAttribute as CFString,
+                                                       &fullScreenBtnEle)
+            if result == .success {
+                var subrole: AnyObject?
+                AXUIElementCopyAttributeValue(fullScreenBtnEle as! AXUIElement,
+                                              kAXSubroleAttribute as CFString,
+                                              &subrole)
+                fullscreen = subrole as! String == kAXZoomButtonSubrole ? true : false
+            }
+            
+            return fullscreen
+        }
+    }
+    
+    
+    
+    var isSheet: Bool {
+        get {
+            var sheet: AnyObject?
+            AXUIElementCopyAttributeValue(self.element, kAXSheetRole as CFString, &sheet)
+            return sheet as? String == kAXSheetRole
+        }
+    }
+    
+    var isEnhancedUi: Bool {
+        get {
+            var enhanced: AnyObject?
+            AXUIElementCopyAttributeValue(self.element, kAXEnhancedUserInterface as CFString, &enhanced)
+            if let enhanced = enhanced {
+                return CFBooleanGetValue((enhanced as! CFBoolean))
+            }
+            
+            return false
+        }
+        
+    }
+    
+    func set(position to: CGPoint) {
+        var pointer = to
+        if let position = AXValueCreate(.cgPoint, &pointer) {
+            AXUIElementSetAttributeValue(self.element, kAXPositionAttribute as CFString, position)
+        }
+        
+    }
+    
+    func set(size to: CGSize) {
+        var pointer = to
+        if let size = AXValueCreate(.cgSize, &pointer) {
+            AXUIElementSetAttributeValue(self.element, kAXSizeAttribute as CFString, size)
+        }
+    }
+    
     /**
-     Applications can include multiple windows in an array based on pid. This loops through
-     all unique processIds and returns an array of valid window objects of an application
+     Set the size and position of a given A11yElement at the same time. The function intentionally
+     sets a timeout for the position action as certain windows (like Chrome) animate to their position
+     and won't move both correctly in the same closure.
      */
-    static var allWindows: [A11yElement] {
-        get {
-            var elements = [A11yElement]()
-            
-            for processId in WindowInfo.allProcessIds {
-                var windows: AnyObject?
-                let application = AXUIElementCreateApplication(processId)
-                let result = AXUIElementCopyAttributeValue(application,
-                                                           kAXWindowsAttribute as CFString,
-                                                           &windows)
-                if result == .success {
-                    let windowsArr = windows as! [AXUIElement]
-                    if !windowsArr.isEmpty {
-                        elements.append(contentsOf: windowsArr.map{ A11yElement($0) })
-                    }
-                }
-            }
-            
-            return elements
+    func set(size: CGSize, position: CGPoint) {
+        self.set(size: size)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.set(position: position)
         }
     }
     
-    var title: String {
-        get {
-            var title: CFTypeRef?
-            AXUIElementCopyAttributeValue(self.element, kAXTitleAttribute as CFString, &title)
-            return title as! String
+    private func copyAttributeValue<Type>(of attribute: String) -> Type? {
+        var ref: CFTypeRef?
+        let result = AXUIElementCopyAttributeValue(self.element, attribute as CFString, &ref)
+        if result == .success {
+            return ref as? Type
         }
+        return nil
     }
     
-    var position: CGPoint {
-        get {
-            var position = CGPoint.init()
-            var positionRef: CFTypeRef?
-            
-            let result = AXUIElementCopyAttributeValue(self.element, kAXPositionAttribute as CFString, &positionRef)
-            if result == .success {
-                AXValueGetValue(positionRef as! AXValue, .cgPoint, &position)
-            }
-            
-            return position
-        }
-    }
-    
-    var size: CGSize {
-        get {
-            var size = CGSize.init()
-            var sizeRef: CFTypeRef?
-            
-            let result = AXUIElementCopyAttributeValue(self.element, kAXSizeAttribute as CFString, &sizeRef)
-            if result == .success {
-                AXValueGetValue(sizeRef as! AXValue, .cgSize, &size)
-            }
-            
-            return size
-        }
+    func logProperties() {
+        let computedProperties = ["Title" : title,
+                                  "Role" : role,
+                                  "Rect" : rect,
+                                  "isResizable" : isResizable,
+                                  "isMinimized" : isMinimized,
+                                  "isWindow" : isWindow,
+                                  "isFullScreen" : isFullScreen,
+                                  "isHidden": isHidden,
+                                  "isSheet" : isSheet,
+                                  "position" : position,
+                                  "size": size
+        ] as [String : Any?]
+        print(computedProperties as NSDictionary)
     }
 }
 

@@ -27,13 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func setupEvents() {
         KeyboardShortcuts.onKeyUp(for: .shortcut) {
-            let windows = A11yElement.allWindows
-            
-            for window in windows {
-                print(window.title)
-                print(window.position)
-                print(window.size)
-            }
+            WindowController.assemble()
         }
     }
 }
