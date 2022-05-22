@@ -1,11 +1,9 @@
-import Foundation
 import Cocoa
+import Foundation
 
-/**
- An A11yElement is a proxy for controlling, moving, and resizing windows in a given view. It uses the
- accessibility API to control the given window as an AXUIElement. Each A11yElement.element instance
- property represents a window in view.
- */
+/// An A11yElement is a proxy for controlling, moving, and resizing windows in a given view. It uses the
+/// accessibility API to control the given window as an AXUIElement. Each A11yElement.element instance
+/// property represents a window in view.
 class A11yElement {
     /**
      The accessibility element proxy that represents a window that directs size and position updates
@@ -17,113 +15,78 @@ class A11yElement {
     }
     
     var title: String? {
-        get {
-            copyAttributeValue(of: kAXTitleAttribute)
-        }
+        copyAttributeValue(of: kAXTitleAttribute)
     }
     
     var role: String? {
-        get {
-            copyAttributeValue(of: kAXRoleAttribute)
-        }
+        copyAttributeValue(of: kAXRoleAttribute)
     }
     
     var isWindow: Bool {
-        get {
-            return self.role == kAXWindowRole
-        }
+        return self.role == kAXWindowRole
     }
     
     var isMinimized: Bool? {
-        get {
-            copyAttributeValue(of: kAXMinimizedAttribute)
-        }
+        copyAttributeValue(of: kAXMinimizedAttribute)
     }
     
     var isHidden: Bool? {
-        get {
-            copyAttributeValue(of: kAXHiddenAttribute)
-        }
+        copyAttributeValue(of: kAXHiddenAttribute)
     }
     
     var isResizable: Bool {
-        get {
-            var resizable: DarwinBoolean = true
-            AXUIElementIsAttributeSettable(self.element, kAXSizeAttribute as CFString, &resizable)
-            return resizable.boolValue
-        }
+        var resizable: DarwinBoolean = true
+        AXUIElementIsAttributeSettable(self.element, kAXSizeAttribute as CFString, &resizable)
+        return resizable.boolValue
     }
     
     var position: CGPoint? {
-        get {
-            if let result: AXValue = copyAttributeValue(of: kAXPositionAttribute) {
-                var positionPointer = CGPoint.init()
-                AXValueGetValue(result, .cgPoint, &positionPointer)
-                return positionPointer
-            }
-            return nil
+        if let result: AXValue = copyAttributeValue(of: kAXPositionAttribute) {
+            var positionPointer = CGPoint.init()
+            AXValueGetValue(result, .cgPoint, &positionPointer)
+            return positionPointer
         }
+        return nil
     }
     
     var size: CGSize? {
-        get {
-            if let result: AXValue = copyAttributeValue(of: kAXSizeAttribute) {
-                var sizePointer = CGSize.init()
-                AXValueGetValue(result, .cgSize, &sizePointer)
-                return sizePointer
-            }
-            return nil
+        if let result: AXValue = copyAttributeValue(of: kAXSizeAttribute) {
+            var sizePointer = CGSize.init()
+            AXValueGetValue(result, .cgSize, &sizePointer)
+            return sizePointer
         }
+        return nil
     }
     
     var rect: CGRect? {
-        get {
-            if let position = position as CGPoint?, let size = size as CGSize? {
-                return CGRect.init(origin: position, size: size)
-            }
-            return nil
+        if let position = position as CGPoint?, let size = size as CGSize? {
+            return CGRect.init(origin: position, size: size)
         }
+        return nil
     }
     
     var isFullScreen: Bool {
-        get {
-            var fullscreen = false
-            var fullScreenBtnEle: CFTypeRef?
-            let result = AXUIElementCopyAttributeValue(self.element,
-                                                       kAXFullScreenButtonAttribute as CFString,
-                                                       &fullScreenBtnEle)
-            if result == .success {
-                var subrole: AnyObject?
-                AXUIElementCopyAttributeValue(fullScreenBtnEle as! AXUIElement,
-                                              kAXSubroleAttribute as CFString,
-                                              &subrole)
-                fullscreen = subrole as! String == kAXZoomButtonSubrole ? true : false
-            }
-            
-            return fullscreen
+        if let fullScreenBtnAttr: AXUIElement = copyAttributeValue(of: kAXFullScreenButtonAttribute) {
+            var subroleAttr: AnyObject?
+            AXUIElementCopyAttributeValue(
+                fullScreenBtnAttr,
+                kAXSubroleAttribute as CFString,
+                &subroleAttr)
+            return subroleAttr as! String == kAXZoomButtonSubrole ? true : false
         }
+        return false
     }
     
-    
-    
     var isSheet: Bool {
-        get {
-            var sheet: AnyObject?
-            AXUIElementCopyAttributeValue(self.element, kAXSheetRole as CFString, &sheet)
-            return sheet as? String == kAXSheetRole
-        }
+        let sheetRole: String? = copyAttributeValue(of: kAXSheetRole)
+        return sheetRole == kAXSheetRole
     }
     
     var isEnhancedUi: Bool {
-        get {
-            var enhanced: AnyObject?
-            AXUIElementCopyAttributeValue(self.element, kAXEnhancedUserInterface as CFString, &enhanced)
-            if let enhanced = enhanced {
-                return CFBooleanGetValue((enhanced as! CFBoolean))
-            }
-            
-            return false
+        if let enhanced: CFBoolean = copyAttributeValue(of: kAXEnhancedUserInterface) {
+            return CFBooleanGetValue(enhanced)
         }
+        return false
         
     }
     
@@ -148,7 +111,7 @@ class A11yElement {
      and won't move both correctly in the same closure.
      */
     func set(size: CGSize, position: CGPoint) {
-        self.set(size: size)
+        set(size: size)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             self.set(position: position)
         }
@@ -164,19 +127,20 @@ class A11yElement {
     }
     
     func logProperties() {
-        let computedProperties = ["Title" : title,
-                                  "Role" : role,
-                                  "Rect" : rect,
-                                  "isResizable" : isResizable,
-                                  "isMinimized" : isMinimized,
-                                  "isWindow" : isWindow,
-                                  "isFullScreen" : isFullScreen,
-                                  "isHidden": isHidden,
-                                  "isSheet" : isSheet,
-                                  "position" : position,
-                                  "size": size
-        ] as [String : Any?]
+        let computedProperties =
+        [
+            "Title": title,
+            "Role": role,
+            "Rect": rect,
+            "isResizable": isResizable,
+            "isMinimized": isMinimized,
+            "isWindow": isWindow,
+            "isFullScreen": isFullScreen,
+            "isHidden": isHidden,
+            "isSheet": isSheet,
+            "position": position,
+            "size": size,
+        ] as [String: Any?]
         print(computedProperties as NSDictionary)
     }
 }
-
