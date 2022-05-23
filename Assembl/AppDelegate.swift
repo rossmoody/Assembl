@@ -14,9 +14,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setupEvents()
     }
     
-    /**
-     State of app accessibility permissions in system preferences
-     */
     var accessibilityPermission: Bool {
         get {
             let options : NSDictionary = [kAXTrustedCheckOptionPrompt.takeRetainedValue() as NSString: true]

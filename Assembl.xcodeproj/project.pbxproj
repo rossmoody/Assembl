@@ -14,7 +14,7 @@
 		CE49FD282830B73700B0B72A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD272830B73700B0B72A /* Constants.swift */; };
 		CE49FD2E28316EA100B0B72A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD2D28316EA100B0B72A /* Preferences.swift */; };
 		CE49FD3028316FE500B0B72A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE49FD2F28316FE500B0B72A /* Localizable.strings */; };
-		CE68B13A2835FF3100E89B68 /* WindowCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68B1392835FF3100E89B68 /* WindowCalculator.swift */; };
+		CE52BEC9283AE4020085A204 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52BEC8283AE4020085A204 /* Screen.swift */; };
 		CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71958282CC0C6006F889E /* AssemblApp.swift */; };
 		CEA7195D282CC0C9006F889E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195C282CC0C9006F889E /* Assets.xcassets */; };
 		CEA71960282CC0C9006F889E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195F282CC0C9006F889E /* Preview Assets.xcassets */; };
@@ -49,7 +49,7 @@
 		CE49FD272830B73700B0B72A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE49FD2D28316EA100B0B72A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		CE49FD2F28316FE500B0B72A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		CE68B1392835FF3100E89B68 /* WindowCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCalculator.swift; sourceTree = "<group>"; };
+		CE52BEC8283AE4020085A204 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		CEA71955282CC0C6006F889E /* Assembl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assembl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA71958282CC0C6006F889E /* AssemblApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblApp.swift; sourceTree = "<group>"; };
 		CEA7195C282CC0C9006F889E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				CEA7195C282CC0C9006F889E /* Assets.xcassets */,
 				CEA71961282CC0C9006F889E /* Assembl.entitlements */,
 				CEA7195E282CC0C9006F889E /* Preview Content */,
-				CE68B1392835FF3100E89B68 /* WindowCalculator.swift */,
+				CE52BEC8283AE4020085A204 /* Screen.swift */,
 				CE327CD32837F16F0001A05B /* WindowController.swift */,
 				CE327CCE28372C2C0001A05B /* A11yElement.swift */,
 			);
@@ -309,9 +309,9 @@
 				CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */,
 				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
 				CE49FD2E28316EA100B0B72A /* Preferences.swift in Sources */,
+				CE52BEC9283AE4020085A204 /* Screen.swift in Sources */,
 				CEC4A5C7283095DB00E2C5CB /* Menu.swift in Sources */,
 				CE327CD42837F16F0001A05B /* WindowController.swift in Sources */,
-				CE68B13A2835FF3100E89B68 /* WindowCalculator.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

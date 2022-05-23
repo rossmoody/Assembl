@@ -26,12 +26,18 @@ class A11yElement {
         return self.role == kAXWindowRole
     }
     
-    var isMinimized: Bool? {
-        copyAttributeValue(of: kAXMinimizedAttribute)
+    var isMinimized: Bool {
+        if let result: Bool = copyAttributeValue(of: kAXMinimizedAttribute) {
+            return result
+        }
+        return false
     }
     
-    var isHidden: Bool? {
-        copyAttributeValue(of: kAXHiddenAttribute)
+    var isHidden: Bool {
+        if let result: Bool = copyAttributeValue(of: kAXHiddenAttribute) {
+            return result
+        }
+        return false
     }
     
     var isResizable: Bool {
@@ -105,14 +111,14 @@ class A11yElement {
         }
     }
     
-    /**
-     Set the size and position of a given A11yElement at the same time. The function intentionally
-     sets a timeout for the position action as certain windows (like Chrome) animate to their position
-     and won't move both correctly in the same closure.
-     */
     func set(size: CGSize, position: CGPoint) {
-        set(size: size)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+        self.set(position: position)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.set(size: size)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
             self.set(position: position)
         }
     }
@@ -129,15 +135,8 @@ class A11yElement {
     func logProperties() {
         let computedProperties =
         [
-            "Title": title,
-            "Role": role,
-            "Rect": rect,
+            "title": title,
             "isResizable": isResizable,
-            "isMinimized": isMinimized,
-            "isWindow": isWindow,
-            "isFullScreen": isFullScreen,
-            "isHidden": isHidden,
-            "isSheet": isSheet,
             "position": position,
             "size": size,
         ] as [String: Any?]
