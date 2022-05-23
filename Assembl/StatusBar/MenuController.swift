@@ -21,19 +21,24 @@ final class MenuController: NSMenu, NSMenuDelegate {
         
         addItem(.separator())
         
-        addItem(withTitle: loc("ABOUT", "Label for information about app in status bar"),
-                action: #selector(orderABurrito),
+        addItem(withTitle: loc("ABOUT", "Label for information about app in status bar."),
+                action: #selector(showAboutView),
                 keyEquivalent: "")
         .target = self
         
-        addItem(withTitle: loc("HELP", "Label for help information about app in status bar"),
-                action: #selector(orderABurrito),
+        addItem(withTitle: loc("CHECK_FOR_UPDATES", "Menu label to manually check for updates from App Store."),
+                action: #selector(checkForUpdates),
+                keyEquivalent: "")
+        .target = self
+        
+        addItem(withTitle: loc("HELP", "Label for help information about app in status bar."),
+                action: #selector(showHelpPanel),
                 keyEquivalent: "")
         .target = self
         
         addItem(.separator())
         
-        addItem(withTitle: loc("QUIT", "Label to quit the app"),
+        addItem(withTitle: loc("QUIT", "Label to quit the app."),
                 action: #selector(quit),
                 keyEquivalent: "q")
         .target = self
@@ -44,8 +49,16 @@ final class MenuController: NSMenu, NSMenuDelegate {
         NSApp.terminate(nil)
     }
     
-    @objc private func orderABurrito() {
-        print("Ordering a burrito!")
+    @objc private func showAboutView() {
+        NSApp.orderFrontStandardAboutPanel()
+    }
+    
+    @objc private func checkForUpdates() {
+        print("To do")
+    }
+    
+    @objc private func showHelpPanel() {
+        print("To do")
     }
     
     @objc private func openPreferences() {

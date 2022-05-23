@@ -1,5 +1,6 @@
 "ASSEMBL" = "Assembl";
 "PREFERENCES" = "Preferences";
-"ABOUT" = "About";
+"ABOUT" = "About Assembl";
 "HELP" = "Help";
 "QUIT" = "Quit";
+"CHECK_FOR_UPDATES" = "Check for updates";
