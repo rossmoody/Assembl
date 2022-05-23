@@ -6,10 +6,9 @@ class WindowController {
      The primary init function for calculating and resizing all windows.
      */
     static func assemble() {
-        let screen = Screen()
-       
         for window in allAxWindowsOnScreen {
             window.logProperties()
+            window.set(size: CGSize.init())
         }
     }
     
