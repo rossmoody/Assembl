@@ -1,7 +1,7 @@
 import SwiftUI
 import KeyboardShortcuts
 
-struct Preferences: View {
+struct PreferencesView: View {
     var body: some View {
         TabView {
             Form {
@@ -13,6 +13,6 @@ struct Preferences: View {
 
 struct Preferences_Previews: PreviewProvider {
     static var previews: some View {
-        Preferences()
+        PreferencesView()
     }
 }

@@ -1,9 +1,9 @@
 import SwiftUI
 
-struct About: View {
+struct AboutView: View {
     var body: some View {
         VStack {
-            Image("app-icon")
+            Image("MenuIcon")
             Text("Text")
         }.frame(width: 300,
                 height: 400,
@@ -13,6 +13,6 @@ struct About: View {
 
 struct About_Preview: PreviewProvider {
     static var previews: some View {
-        About()
+        AboutView()
     }
 }

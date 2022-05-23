@@ -7,7 +7,7 @@ struct AssemblApp: App {
     
     var body: some Scene {
         Settings {
-            Preferences()
+            PreferencesView()
         }
     }
 }

@@ -1,7 +1,7 @@
 import Foundation
 import AppKit
 
-final class Menu: NSMenu, NSMenuDelegate {
+final class MenuController: NSMenu, NSMenuDelegate {
     
     override init(title: String) {
         super.init(title: title)
