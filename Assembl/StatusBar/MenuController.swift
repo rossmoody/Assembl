@@ -15,7 +15,7 @@ final class MenuController: NSMenu, NSMenuDelegate {
     
     private func createMenuItems() {
         addItem(withTitle: loc("PREFERENCES", "Label for preferences menu in status bar."),
-                action: #selector(openPreferences),
+                action: #selector(showPreferences),
                 keyEquivalent: ",")
         .target = self
         
@@ -51,6 +51,7 @@ final class MenuController: NSMenu, NSMenuDelegate {
     
     @objc private func showAboutView() {
         NSApp.orderFrontStandardAboutPanel()
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     @objc private func checkForUpdates() {
@@ -61,7 +62,7 @@ final class MenuController: NSMenu, NSMenuDelegate {
         print("To do")
     }
     
-    @objc private func openPreferences() {
+    @objc private func showPreferences() {
         NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
     }
 }
