@@ -1,13 +1,20 @@
 import SwiftUI
+import Cocoa
 import KeyboardShortcuts
 
 struct PreferencesView: View {
+    
+    @State private var showDockIcon = false
+    
     var body: some View {
-        TabView {
-            Form {
-                KeyboardShortcuts.Recorder("", name: .shortcut)
-            }
-        }.frame(width: 450, height: 250)
+        Form {
+            KeyboardShortcuts.Recorder("", name: .shortcut)
+            Toggle.init("Show dock icon", isOn: $showDockIcon)
+                .onChange(of: showDockIcon) { value in
+                    MenuController
+                        .toggleDockIconSetting(state: showDockIcon)
+                }
+        }.padding(40)
     }
 }
 

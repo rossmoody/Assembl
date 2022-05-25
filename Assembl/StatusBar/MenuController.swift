@@ -1,7 +1,9 @@
 import Foundation
 import AppKit
+import SwiftUI
 
 final class MenuController: NSMenu, NSMenuDelegate {
+    @Environment(\.openURL) var openURL
     
     override init(title: String) {
         super.init(title: title)
@@ -15,14 +17,14 @@ final class MenuController: NSMenu, NSMenuDelegate {
     
     private func createMenuItems() {
         addItem(withTitle: loc("PREFERENCES", "Label for preferences menu in status bar."),
-                action: #selector(showPreferences),
+                action: #selector(handlePreferencesAction),
                 keyEquivalent: ",")
         .target = self
         
         addItem(.separator())
         
         addItem(withTitle: loc("ABOUT", "Label for information about app in status bar."),
-                action: #selector(showAboutView),
+                action: #selector(handleAboutAction),
                 keyEquivalent: "")
         .target = self
         
@@ -31,8 +33,8 @@ final class MenuController: NSMenu, NSMenuDelegate {
                 keyEquivalent: "")
         .target = self
         
-        addItem(withTitle: loc("HELP", "Label for help information about app in status bar."),
-                action: #selector(showHelpPanel),
+        addItem(withTitle: loc("SUPPORT", "Label for help information about app in status bar."),
+                action: #selector(handleSupportAction),
                 keyEquivalent: "")
         .target = self
         
@@ -49,8 +51,17 @@ final class MenuController: NSMenu, NSMenuDelegate {
         NSApp.terminate(nil)
     }
     
-    @objc private func showAboutView() {
+    @objc private func handleAboutAction() {
         NSApp.orderFrontStandardAboutPanel()
+        NSApp.activate(ignoringOtherApps: true)
+    }
+    
+    @objc private func handleSupportAction() {
+        openURL(URL(string: "https://rossmoody.com")!)
+    }
+    
+    @objc private func handlePreferencesAction() {
+        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
         NSApp.activate(ignoringOtherApps: true)
     }
     
@@ -58,11 +69,11 @@ final class MenuController: NSMenu, NSMenuDelegate {
         print("To do")
     }
     
-    @objc private func showHelpPanel() {
-        print("To do")
-    }
-    
-    @objc private func showPreferences() {
-        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+    static func toggleDockIconSetting(state showDockIcon: Bool) {
+        if showDockIcon {
+            NSApp.setActivationPolicy(NSApplication.ActivationPolicy.regular)
+        } else {
+            NSApp.setActivationPolicy(NSApplication.ActivationPolicy.accessory)
+        }
     }
 }

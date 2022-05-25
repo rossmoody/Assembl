@@ -17,7 +17,6 @@
 		CE52BEC9283AE4020085A204 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52BEC8283AE4020085A204 /* Screen.swift */; };
 		CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71958282CC0C6006F889E /* AssemblApp.swift */; };
 		CEA7195D282CC0C9006F889E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195C282CC0C9006F889E /* Assets.xcassets */; };
-		CEA71960282CC0C9006F889E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195F282CC0C9006F889E /* Preview Assets.xcassets */; };
 		CEA7196B282CC0C9006F889E /* AssemblTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7196A282CC0C9006F889E /* AssemblTests.swift */; };
 		CEA71975282CC0C9006F889E /* AssemblUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71974282CC0C9006F889E /* AssemblUITests.swift */; };
 		CEA71977282CC0C9006F889E /* AssemblUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */; };
@@ -53,7 +52,6 @@
 		CEA71955282CC0C6006F889E /* Assembl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assembl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA71958282CC0C6006F889E /* AssemblApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblApp.swift; sourceTree = "<group>"; };
 		CEA7195C282CC0C9006F889E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEA7195F282CC0C9006F889E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEA71961282CC0C9006F889E /* Assembl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Assembl.entitlements; sourceTree = "<group>"; };
 		CEA71966282CC0C9006F889E /* AssemblTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssemblTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA7196A282CC0C9006F889E /* AssemblTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblTests.swift; sourceTree = "<group>"; };
@@ -61,6 +59,7 @@
 		CEA71974282CC0C9006F889E /* AssemblUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblUITests.swift; sourceTree = "<group>"; };
 		CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEA71989282DFAB5006F889E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEBDCCB0283C818C0083AFBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEC4A5C42830755A00E2C5CB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CEC4A5C6283095DB00E2C5CB /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +123,7 @@
 		CEA71957282CC0C6006F889E /* Assembl */ = {
 			isa = PBXGroup;
 			children = (
+				CEBDCCB0283C818C0083AFBF /* Info.plist */,
 				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
 				CE49FD272830B73700B0B72A /* Constants.swift */,
 				CE327CD228372DD20001A05B /* StatusBar */,
@@ -132,20 +132,11 @@
 				CEC4A5C42830755A00E2C5CB /* Utilities.swift */,
 				CEA7195C282CC0C9006F889E /* Assets.xcassets */,
 				CEA71961282CC0C9006F889E /* Assembl.entitlements */,
-				CEA7195E282CC0C9006F889E /* Preview Content */,
 				CE52BEC8283AE4020085A204 /* Screen.swift */,
 				CE327CD32837F16F0001A05B /* WindowController.swift */,
 				CE327CCE28372C2C0001A05B /* A11yElement.swift */,
 			);
 			path = Assembl;
-			sourceTree = "<group>";
-		};
-		CEA7195E282CC0C9006F889E /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				CEA7195F282CC0C9006F889E /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		CEA71969282CC0C9006F889E /* AssemblTests */ = {
@@ -277,7 +268,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA71960282CC0C9006F889E /* Preview Assets.xcassets in Resources */,
 				CE49FD3028316FE500B0B72A /* Localizable.strings in Resources */,
 				CEA7195D282CC0C9006F889E /* Assets.xcassets in Resources */,
 			);
@@ -401,6 +391,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -457,6 +449,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -476,11 +470,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Assembl/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 27P4L7HW7J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Assembl/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,11 +499,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Assembl/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 27P4L7HW7J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Assembl/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

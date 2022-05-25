@@ -6,9 +6,18 @@ class WindowController {
      The primary init function for calculating and resizing all windows.
      */
     static func assemble() {
+        gridWindows()
+    }
+    
+    static func gridWindows() {
+        var yPosition = Screen.rect.origin.y
+        let rowHeight = CGFloat(ceil(CGFloat(Screen.rect.height) / CGFloat(allAxWindowsOnScreen.count)))
+        
         for window in allAxWindowsOnScreen {
-            window.logProperties()
-            window.set(size: CGSize.init())
+            let size = CGSize(width: Screen.rect.width, height: rowHeight)
+            let position = CGPoint(x: Screen.rect.origin.x, y: yPosition)
+            window.set(size: size, position: position)
+            yPosition += rowHeight
         }
     }
     
@@ -57,7 +66,6 @@ class WindowController {
                             let element = A11yElement(window)
                             
                             if element.isFullScreen {
-                                print("The window is full screen. Exiting.")
                                 return [A11yElement]()
                             }
                             
