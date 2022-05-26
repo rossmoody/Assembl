@@ -1,7 +1,7 @@
 import Foundation
 import Cocoa
 
-class WindowController {
+class WindowMover {
     /**
      The primary init function for calculating and resizing all windows.
      */
@@ -54,7 +54,7 @@ class WindowController {
     static var allAxWindowsOnScreen: [A11yElement] {
         get {
             var elements = [A11yElement]()
-            for processId in WindowController.allProcessIds {
+            for processId in WindowMover.allProcessIds {
                 var windows: AnyObject?
                 AXUIElementCopyAttributeValue(AXUIElementCreateApplication(processId),
                                               kAXWindowsAttribute as CFString,

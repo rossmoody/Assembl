@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE0B907D283712A8007E960F /* KeyboardShortcuts */; };
 		CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CCE28372C2C0001A05B /* A11yElement.swift */; };
-		CE327CD42837F16F0001A05B /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CD32837F16F0001A05B /* WindowController.swift */; };
+		CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CD32837F16F0001A05B /* WindowMover.swift */; };
 		CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C533C283042A1008E02B8 /* KeyboardShortcuts */; };
 		CE49FD282830B73700B0B72A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD272830B73700B0B72A /* Constants.swift */; };
-		CE49FD2E28316EA100B0B72A /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD2D28316EA100B0B72A /* PreferencesView.swift */; };
 		CE49FD3028316FE500B0B72A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE49FD2F28316FE500B0B72A /* Localizable.strings */; };
 		CE52BEC9283AE4020085A204 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52BEC8283AE4020085A204 /* Screen.swift */; };
 		CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71958282CC0C6006F889E /* AssemblApp.swift */; };
@@ -21,6 +20,8 @@
 		CEA71975282CC0C9006F889E /* AssemblUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71974282CC0C9006F889E /* AssemblUITests.swift */; };
 		CEA71977282CC0C9006F889E /* AssemblUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */; };
 		CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71989282DFAB5006F889E /* AppDelegate.swift */; };
+		CEBDCCB2283DC0D30083AFBF /* AssemblProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDCCB1283DC0D30083AFBF /* AssemblProView.swift */; };
+		CEBDCCB4283DE8080083AFBF /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDCCB3283DE8080083AFBF /* GeneralView.swift */; };
 		CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C42830755A00E2C5CB /* Utilities.swift */; };
 		CEC4A5C7283095DB00E2C5CB /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C6283095DB00E2C5CB /* MenuController.swift */; };
 /* End PBXBuildFile section */
@@ -44,9 +45,8 @@
 
 /* Begin PBXFileReference section */
 		CE327CCE28372C2C0001A05B /* A11yElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yElement.swift; sourceTree = "<group>"; };
-		CE327CD32837F16F0001A05B /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		CE327CD32837F16F0001A05B /* WindowMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMover.swift; sourceTree = "<group>"; };
 		CE49FD272830B73700B0B72A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		CE49FD2D28316EA100B0B72A /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		CE49FD2F28316FE500B0B72A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CE52BEC8283AE4020085A204 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		CEA71955282CC0C6006F889E /* Assembl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assembl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +60,8 @@
 		CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEA71989282DFAB5006F889E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBDCCB0283C818C0083AFBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CEBDCCB1283DC0D30083AFBF /* AssemblProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblProView.swift; sourceTree = "<group>"; };
+		CEBDCCB3283DE8080083AFBF /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		CEC4A5C42830755A00E2C5CB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CEC4A5C6283095DB00E2C5CB /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,13 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE327CD228372DD20001A05B /* StatusBar */ = {
+		CE327CD228372DD20001A05B /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				CE49FD2D28316EA100B0B72A /* PreferencesView.swift */,
+				CEBDCCB1283DC0D30083AFBF /* AssemblProView.swift */,
 				CEC4A5C6283095DB00E2C5CB /* MenuController.swift */,
+				CEBDCCB3283DE8080083AFBF /* GeneralView.swift */,
 			);
-			path = StatusBar;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		CEA7194C282CC0C6006F889E = {
@@ -126,14 +129,14 @@
 				CEBDCCB0283C818C0083AFBF /* Info.plist */,
 				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
 				CE49FD272830B73700B0B72A /* Constants.swift */,
-				CE327CD228372DD20001A05B /* StatusBar */,
+				CE327CD228372DD20001A05B /* Menu */,
 				CE49FD2F28316FE500B0B72A /* Localizable.strings */,
 				CEA71989282DFAB5006F889E /* AppDelegate.swift */,
 				CEC4A5C42830755A00E2C5CB /* Utilities.swift */,
 				CEA7195C282CC0C9006F889E /* Assets.xcassets */,
 				CEA71961282CC0C9006F889E /* Assembl.entitlements */,
 				CE52BEC8283AE4020085A204 /* Screen.swift */,
-				CE327CD32837F16F0001A05B /* WindowController.swift */,
+				CE327CD32837F16F0001A05B /* WindowMover.swift */,
 				CE327CCE28372C2C0001A05B /* A11yElement.swift */,
 			);
 			path = Assembl;
@@ -294,14 +297,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBDCCB2283DC0D30083AFBF /* AssemblProView.swift in Sources */,
 				CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */,
 				CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */,
 				CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */,
 				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
-				CE49FD2E28316EA100B0B72A /* PreferencesView.swift in Sources */,
+				CEBDCCB4283DE8080083AFBF /* GeneralView.swift in Sources */,
 				CE52BEC9283AE4020085A204 /* Screen.swift in Sources */,
 				CEC4A5C7283095DB00E2C5CB /* MenuController.swift in Sources */,
-				CE327CD42837F16F0001A05B /* WindowController.swift in Sources */,
+				CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

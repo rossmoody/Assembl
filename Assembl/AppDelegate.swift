@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func setupEvents() {
         KeyboardShortcuts.onKeyUp(for: .shortcut) {
-            WindowController.assemble()
+            WindowMover.assemble()
         }
     }
 }

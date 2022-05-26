@@ -2,25 +2,12 @@ import Foundation
 import Cocoa
 
 class Screen {
-    
-    private static let screen = Screen.screenWithMouse
-    
     static var rect: CGRect {
         get {
-            return CGRect.init(origin: Screen.origin, size: Screen.size)
-        }
-    }
-    
-    private static var origin: CGPoint {
-        get {
-            return CGPoint.init(x: screen.visibleFrame.origin.x,
-                                y: screen.frame.height - (screen.visibleFrame.height + screen.visibleFrame.origin.y))
-        }
-    }
-    
-    private static var size: CGSize {
-        get {
-            return screen.visibleFrame.size
+            let origin = CGPoint.init(x: screenWithMouse.visibleFrame.origin.x,
+                                      y: screenWithMouse.frame.height - (screenWithMouse.visibleFrame.height + screenWithMouse.visibleFrame.origin.y))
+            
+            return CGRect.init(origin: origin, size: screenWithMouse.visibleFrame.size)
         }
     }
     

@@ -1,5 +1,4 @@
 import Foundation
-import AppKit
 import SwiftUI
 
 final class MenuController: NSMenu, NSMenuDelegate {
@@ -52,7 +51,8 @@ final class MenuController: NSMenu, NSMenuDelegate {
     }
     
     @objc private func handleAboutAction() {
-        NSApp.orderFrontStandardAboutPanel()
+        //TODO
+        NSApp.orderFrontStandardAboutPanel(options: [:])
         NSApp.activate(ignoringOtherApps: true)
     }
     
