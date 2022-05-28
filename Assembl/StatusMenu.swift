@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-final class MenuController: NSMenu, NSMenuDelegate {
+final class StatusMenu: NSMenu, NSMenuDelegate {
     @Environment(\.openURL) var openURL
     
     override init(title: String) {
@@ -67,13 +67,5 @@ final class MenuController: NSMenu, NSMenuDelegate {
     
     @objc private func checkForUpdates() {
         print("To do")
-    }
-    
-    static func toggleDockIconSetting(state showDockIcon: Bool) {
-        if showDockIcon {
-            NSApp.setActivationPolicy(NSApplication.ActivationPolicy.regular)
-        } else {
-            NSApp.setActivationPolicy(NSApplication.ActivationPolicy.accessory)
-        }
     }
 }

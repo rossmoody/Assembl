@@ -10,6 +10,8 @@
 		CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE0B907D283712A8007E960F /* KeyboardShortcuts */; };
 		CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CCE28372C2C0001A05B /* A11yElement.swift */; };
 		CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CD32837F16F0001A05B /* WindowMover.swift */; };
+		CE3626AB284076CB00EC3E55 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = CE3626AA284076CB00EC3E55 /* LaunchAtLogin */; };
+		CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3626AE2841D81300EC3E55 /* SettingsView.swift */; };
 		CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C533C283042A1008E02B8 /* KeyboardShortcuts */; };
 		CE49FD282830B73700B0B72A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD272830B73700B0B72A /* Constants.swift */; };
 		CE49FD3028316FE500B0B72A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE49FD2F28316FE500B0B72A /* Localizable.strings */; };
@@ -23,7 +25,7 @@
 		CEBDCCB2283DC0D30083AFBF /* AssemblProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDCCB1283DC0D30083AFBF /* AssemblProView.swift */; };
 		CEBDCCB4283DE8080083AFBF /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDCCB3283DE8080083AFBF /* GeneralView.swift */; };
 		CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C42830755A00E2C5CB /* Utilities.swift */; };
-		CEC4A5C7283095DB00E2C5CB /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C6283095DB00E2C5CB /* MenuController.swift */; };
+		CEC4A5C7283095DB00E2C5CB /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,7 @@
 /* Begin PBXFileReference section */
 		CE327CCE28372C2C0001A05B /* A11yElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yElement.swift; sourceTree = "<group>"; };
 		CE327CD32837F16F0001A05B /* WindowMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMover.swift; sourceTree = "<group>"; };
+		CE3626AE2841D81300EC3E55 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CE49FD272830B73700B0B72A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE49FD2F28316FE500B0B72A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CE52BEC8283AE4020085A204 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -63,7 +66,7 @@
 		CEBDCCB1283DC0D30083AFBF /* AssemblProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblProView.swift; sourceTree = "<group>"; };
 		CEBDCCB3283DE8080083AFBF /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		CEC4A5C42830755A00E2C5CB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		CEC4A5C6283095DB00E2C5CB /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3626AB284076CB00EC3E55 /* LaunchAtLogin in Frameworks */,
 				CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */,
 				CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */,
 			);
@@ -93,14 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE327CD228372DD20001A05B /* Menu */ = {
+		CE327CD228372DD20001A05B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CE3626AE2841D81300EC3E55 /* SettingsView.swift */,
 				CEBDCCB1283DC0D30083AFBF /* AssemblProView.swift */,
-				CEC4A5C6283095DB00E2C5CB /* MenuController.swift */,
 				CEBDCCB3283DE8080083AFBF /* GeneralView.swift */,
 			);
-			path = Menu;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		CEA7194C282CC0C6006F889E = {
@@ -127,17 +131,18 @@
 			isa = PBXGroup;
 			children = (
 				CEBDCCB0283C818C0083AFBF /* Info.plist */,
+				CE327CCE28372C2C0001A05B /* A11yElement.swift */,
 				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
 				CE49FD272830B73700B0B72A /* Constants.swift */,
-				CE327CD228372DD20001A05B /* Menu */,
+				CE327CD228372DD20001A05B /* Settings */,
 				CE49FD2F28316FE500B0B72A /* Localizable.strings */,
 				CEA71989282DFAB5006F889E /* AppDelegate.swift */,
 				CEC4A5C42830755A00E2C5CB /* Utilities.swift */,
 				CEA7195C282CC0C9006F889E /* Assets.xcassets */,
 				CEA71961282CC0C9006F889E /* Assembl.entitlements */,
 				CE52BEC8283AE4020085A204 /* Screen.swift */,
+				CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */,
 				CE327CD32837F16F0001A05B /* WindowMover.swift */,
-				CE327CCE28372C2C0001A05B /* A11yElement.swift */,
 			);
 			path = Assembl;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				CEA71951282CC0C6006F889E /* Sources */,
 				CEA71952282CC0C6006F889E /* Frameworks */,
 				CEA71953282CC0C6006F889E /* Resources */,
+				CE3626AD284077D700EC3E55 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -178,6 +184,7 @@
 			packageProductDependencies = (
 				CE3C533C283042A1008E02B8 /* KeyboardShortcuts */,
 				CE0B907D283712A8007E960F /* KeyboardShortcuts */,
+				CE3626AA284076CB00EC3E55 /* LaunchAtLogin */,
 			);
 			productName = Assembl;
 			productReference = CEA71955282CC0C6006F889E /* Assembl.app */;
@@ -253,7 +260,7 @@
 			mainGroup = CEA7194C282CC0C6006F889E;
 			packageReferences = (
 				CE3C533B283042A1008E02B8 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
-				CE0B907C283712A8007E960F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				CE3626A9284076CB00EC3E55 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = CEA71956282CC0C6006F889E /* Products */;
 			projectDirPath = "";
@@ -292,6 +299,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CE3626AD284077D700EC3E55 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CEA71951282CC0C6006F889E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -304,8 +331,9 @@
 				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
 				CEBDCCB4283DE8080083AFBF /* GeneralView.swift in Sources */,
 				CE52BEC9283AE4020085A204 /* Screen.swift in Sources */,
-				CEC4A5C7283095DB00E2C5CB /* MenuController.swift in Sources */,
+				CEC4A5C7283095DB00E2C5CB /* StatusMenu.swift in Sources */,
 				CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */,
+				CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,9 +664,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CE0B907C283712A8007E960F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+		CE3626A9284076CB00EC3E55 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -659,6 +687,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE3C533B283042A1008E02B8 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		CE3626AA284076CB00EC3E55 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE3626A9284076CB00EC3E55 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
 		};
 		CE3C533C283042A1008E02B8 /* KeyboardShortcuts */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -8,22 +8,10 @@ struct AssemblApp: App {
     
     var body: some Scene {
         Settings {
-            TabView {
-                GeneralView()
-                    .tabItem {
-                        Label("General", systemImage: "gearshape")
-                    }
-                
-                AssemblProView()
-                    .tabItem {
-                        Label("Settings", systemImage: "gearshape")
-                    }
-            }
+            SettingsView()
         }
     }
 }
-
-
 
 
 
