@@ -37,36 +37,43 @@ class Screen {
      */
     static var allAxWindowsOnScreen: [A11yElement] {
         get {
-            var elements = [A11yElement]()
+            var validA11yElements = [A11yElement]()
+            
             for processId in Screen.allWindowIds {
-                var windows: AnyObject?
+                var applicationWindows: AnyObject?
+                
                 AXUIElementCopyAttributeValue(AXUIElementCreateApplication(processId),
                                               kAXWindowsAttribute as CFString,
-                                              &windows)
+                                              &applicationWindows)
                 
-                if let windowsArray = windows as? [AXUIElement] {
-                    if !windowsArray.isEmpty {
-                        for window in windowsArray {
-                            let element = A11yElement(window: window, processId: processId)
-                            
-                            if element.isFullScreen {
-                                return [A11yElement]()
-                            }
-                            
-                            if element.isWindow
-                                && !element.isSheet
-                                && !element.isHidden
-                                && !element.isMinimized
-                                && element.position != nil {
-                                elements.append(element)
-                            }
-                        }
-                    }
+                guard let applicationWindows = applicationWindows as? [AXUIElement] else {
+                    continue
                 }
                 
+                if applicationWindows.isEmpty {
+                    continue
+                }
+                
+                for window in applicationWindows {
+                    let element = A11yElement(window: window, processId: processId)
+                    
+                    element.logProperties()
+                    
+                    if element.isFullScreen {
+                        return [A11yElement]()
+                    }
+                    
+                    if element.isWindow
+                        && !element.isSheet
+                        && !element.isHidden
+                        && !element.isMinimized
+                        && element.position != nil {
+                        validA11yElements.append(element)
+                    }
+                }
             }
             
-            return elements
+            return validA11yElements
         }
     }
     

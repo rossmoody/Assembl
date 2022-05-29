@@ -86,14 +86,6 @@ class A11yElement {
         return sheetRole == kAXSheetRole
     }
     
-    var isEnhancedUi: Bool {
-        if let enhanced: CFBoolean = copyAttributeValue(of: kAXEnhancedUserInterface) {
-            return CFBooleanGetValue(enhanced)
-        }
-        return false
-        
-    }
-    
     func set(position to: CGPoint) {
         var pointer = to
         if let position = AXValueCreate(.cgPoint, &pointer) {
@@ -144,6 +136,10 @@ class A11yElement {
             "position": position,
             "size": size,
             "processId": processId,
+            "isFullscreen": isFullScreen,
+            "isWindow": isWindow,
+            "isSheet": isSheet,
+            "role": role
         ] as [String: Any?]
         
         print(computedProperties as NSDictionary)

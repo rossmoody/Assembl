@@ -29,7 +29,6 @@ final class WindowMover {
                 size.width = CGFloat((columns - column) * Int(size.width))
             }
             
-            window.logProperties()
             window.set(size: size, position: position)
         }
     }
