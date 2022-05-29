@@ -1,17 +1,15 @@
 import Cocoa
 import Foundation
 
-/// An A11yElement is a proxy for controlling, moving, and resizing windows in a given view. It uses the
-/// accessibility API to control the given window as an AXUIElement. Each A11yElement.element instance
-/// property represents a window in view.
 class A11yElement {
-    /**
-     The accessibility element proxy that represents a window that directs size and position updates
-     */
-    var element: AXUIElement
     
-    init(_ element: AXUIElement) {
-        self.element = element
+    let element: AXUIElement
+    
+    let processId: pid_t
+        
+    init(window: AXUIElement, processId: pid_t) {
+        self.element = window
+        self.processId = processId
     }
     
     var title: String? {
@@ -112,9 +110,10 @@ class A11yElement {
     }
     
     func set(size: CGSize, position: CGPoint) {
-        self.set(position: position)
+        bringToFront()
+        set(position: position)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.set(size: size)
         }
         
@@ -123,12 +122,17 @@ class A11yElement {
         }
     }
     
+    func bringToFront() {
+        if let app = NSRunningApplication(processIdentifier: self.processId) {
+            AXUIElementSetAttributeValue(self.element, kAXMainAttribute as CFString, true as CFTypeRef)
+            app.activate(options: .activateIgnoringOtherApps)
+        }
+    }
+    
     private func copyAttributeValue<Type>(of attribute: String) -> Type? {
         var ref: CFTypeRef?
         let result = AXUIElementCopyAttributeValue(self.element, attribute as CFString, &ref)
-        if result == .success {
-            return ref as? Type
-        }
+        if result == .success { return ref as? Type }
         return nil
     }
     
@@ -139,7 +143,9 @@ class A11yElement {
             "isResizable": isResizable,
             "position": position,
             "size": size,
+            "processId": processId,
         ] as [String: Any?]
+        
         print(computedProperties as NSDictionary)
     }
 }

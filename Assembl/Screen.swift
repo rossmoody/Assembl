@@ -14,36 +14,19 @@ class Screen {
         }
     }
     
-    private static var screenWithMouse: NSScreen {
+    static var resizableWindows: [A11yElement] {
         get {
-            return NSScreen.screens.first {
-                NSMouseInRect(NSEvent.mouseLocation, $0.frame, false)
-            } ?? NSScreen.screens[0]
-        }
-    }
-    
-    /**
-     The unique set of all available window process ids from a given screen.
-     */
-    private static var allProcessIds: Set<pid_t> {
-        get {
-            var processIds: Set<pid_t> = []
-            for window in allWindowOnScreen {
-                let processId = window[kCGWindowOwnerPID as String] as! pid_t
-                processIds.insert(processId)
+            allAxWindowsOnScreen.filter { window in
+                window.isResizable
             }
-            return processIds
         }
     }
     
-    /**
-     An array information about all windows in a given screen. This includes hidden windows that
-     may come from background apps or menu items (even though it says OnScreenOnly).
-     */
-    static var allWindowOnScreen: [Dictionary<String, Any>] {
+    static var nonSizableWindows: [A11yElement] {
         get {
-            let options = CGWindowListOption([.optionOnScreenOnly, .excludeDesktopElements])
-            return CGWindowListCopyWindowInfo(options, kCGNullWindowID) as! [Dictionary<String, Any>]
+            allAxWindowsOnScreen.filter { window in
+                !window.isResizable
+            }
         }
     }
     
@@ -55,7 +38,7 @@ class Screen {
     static var allAxWindowsOnScreen: [A11yElement] {
         get {
             var elements = [A11yElement]()
-            for processId in Screen.allProcessIds {
+            for processId in Screen.allWindowIds {
                 var windows: AnyObject?
                 AXUIElementCopyAttributeValue(AXUIElementCreateApplication(processId),
                                               kAXWindowsAttribute as CFString,
@@ -64,7 +47,7 @@ class Screen {
                 if let windowsArray = windows as? [AXUIElement] {
                     if !windowsArray.isEmpty {
                         for window in windowsArray {
-                            let element = A11yElement(window)
+                            let element = A11yElement(window: window, processId: processId)
                             
                             if element.isFullScreen {
                                 return [A11yElement]()
@@ -84,6 +67,41 @@ class Screen {
             }
             
             return elements
+        }
+    }
+    
+    private static var screenWithMouse: NSScreen {
+        get {
+            return NSScreen.screens.first {
+                NSMouseInRect(NSEvent.mouseLocation, $0.frame, false)
+            } ?? NSScreen.screens[0]
+        }
+    }
+    
+    /**
+     The unique set of all available window process ids from a given screen.
+     */
+    private static var allWindowIds: Set<pid_t> {
+        get {
+            var processIds: Set<pid_t> = []
+            
+            for window in allWindowOnScreen {
+                let processId = window[kCGWindowOwnerPID as String] as! pid_t
+                processIds.insert(processId)
+            }
+            
+            return processIds
+        }
+    }
+    
+    /**
+     An array information about all windows in a given screen. This includes hidden windows that
+     may come from background apps or menu items (even though it says OnScreenOnly).
+     */
+    private static var allWindowOnScreen: [Dictionary<String, Any>] {
+        get {
+            let options = CGWindowListOption([.optionOnScreenOnly, .excludeDesktopElements])
+            return CGWindowListCopyWindowInfo(options, kCGNullWindowID) as! [Dictionary<String, Any>]
         }
     }
 }

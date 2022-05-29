@@ -131,17 +131,17 @@
 			isa = PBXGroup;
 			children = (
 				CEBDCCB0283C818C0083AFBF /* Info.plist */,
-				CE327CCE28372C2C0001A05B /* A11yElement.swift */,
-				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
-				CE49FD272830B73700B0B72A /* Constants.swift */,
-				CE327CD228372DD20001A05B /* Settings */,
-				CE49FD2F28316FE500B0B72A /* Localizable.strings */,
-				CEA71989282DFAB5006F889E /* AppDelegate.swift */,
-				CEC4A5C42830755A00E2C5CB /* Utilities.swift */,
 				CEA7195C282CC0C9006F889E /* Assets.xcassets */,
 				CEA71961282CC0C9006F889E /* Assembl.entitlements */,
+				CE49FD2F28316FE500B0B72A /* Localizable.strings */,
+				CE327CCE28372C2C0001A05B /* A11yElement.swift */,
+				CEA71989282DFAB5006F889E /* AppDelegate.swift */,
+				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
+				CE49FD272830B73700B0B72A /* Constants.swift */,
 				CE52BEC8283AE4020085A204 /* Screen.swift */,
+				CE327CD228372DD20001A05B /* Settings */,
 				CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */,
+				CEC4A5C42830755A00E2C5CB /* Utilities.swift */,
 				CE327CD32837F16F0001A05B /* WindowMover.swift */,
 			);
 			path = Assembl;
