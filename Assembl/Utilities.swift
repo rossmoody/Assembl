@@ -1,5 +1,5 @@
-import Foundation
 import Cocoa
+import Foundation
 
 /**
  Convenience function for initializing an object and modifying its properties.
@@ -17,4 +17,3 @@ func with<T>(_ item: T, update: (inout T) throws -> Void) rethrows -> T {
 func loc(_ key: String, _ comment: String) -> String {
     return NSLocalizedString(key, comment: comment)
 }
-

@@ -16,6 +16,7 @@
 		CE49FD282830B73700B0B72A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD272830B73700B0B72A /* Constants.swift */; };
 		CE49FD3028316FE500B0B72A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE49FD2F28316FE500B0B72A /* Localizable.strings */; };
 		CE52BEC9283AE4020085A204 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52BEC8283AE4020085A204 /* Screen.swift */; };
+		CE8C3E482845425600BFE461 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C3E472845425600BFE461 /* Empty.swift */; };
 		CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71958282CC0C6006F889E /* AssemblApp.swift */; };
 		CEA7195D282CC0C9006F889E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195C282CC0C9006F889E /* Assets.xcassets */; };
 		CEA7196B282CC0C9006F889E /* AssemblTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7196A282CC0C9006F889E /* AssemblTests.swift */; };
@@ -52,6 +53,8 @@
 		CE49FD272830B73700B0B72A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE49FD2F28316FE500B0B72A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CE52BEC8283AE4020085A204 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		CE8C3E452845424700BFE461 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		CE8C3E472845425600BFE461 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		CEA71955282CC0C6006F889E /* Assembl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assembl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA71958282CC0C6006F889E /* AssemblApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblApp.swift; sourceTree = "<group>"; };
 		CEA7195C282CC0C9006F889E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,16 +110,19 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		CE549B7528453A2F00D9F917 /* New Group */ = {
+		CE6243962845429E004965D5 /* BuildTools */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C3E452845424700BFE461 /* Package.swift */,
+				CE8C3E472845425600BFE461 /* Empty.swift */,
 			);
-			path = "New Group";
+			path = BuildTools;
 			sourceTree = "<group>";
 		};
 		CEA7194C282CC0C6006F889E = {
 			isa = PBXGroup;
 			children = (
+				CE6243962845429E004965D5 /* BuildTools */,
 				CEA71957282CC0C6006F889E /* Assembl */,
 				CEA71969282CC0C9006F889E /* AssemblTests */,
 				CEA71973282CC0C9006F889E /* AssemblUITests */,
@@ -137,7 +143,6 @@
 		CEA71957282CC0C6006F889E /* Assembl */ = {
 			isa = PBXGroup;
 			children = (
-				CE549B7528453A2F00D9F917 /* New Group */,
 				CEBDCCB0283C818C0083AFBF /* Info.plist */,
 				CEA7195C282CC0C9006F889E /* Assets.xcassets */,
 				CEA71961282CC0C9006F889E /* Assembl.entitlements */,
@@ -179,7 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEA7197A282CC0C9006F889E /* Build configuration list for PBXNativeTarget "Assembl" */;
 			buildPhases = (
-				CE8E330F284539AE001F5F22 /* ShellScript */,
+				CE8C3E442845420800BFE461 /* ShellScript */,
 				CEA71951282CC0C6006F889E /* Sources */,
 				CEA71952282CC0C6006F889E /* Frameworks */,
 				CEA71953282CC0C6006F889E /* Resources */,
@@ -327,7 +332,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
 		};
-		CE8E330F284539AE001F5F22 /* ShellScript */ = {
+		CE8C3E442845420800BFE461 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,6 +364,7 @@
 				CEBDCCB4283DE8080083AFBF /* GeneralView.swift in Sources */,
 				CE52BEC9283AE4020085A204 /* Screen.swift in Sources */,
 				CEC4A5C7283095DB00E2C5CB /* StatusMenu.swift in Sources */,
+				CE8C3E482845425600BFE461 /* Empty.swift in Sources */,
 				CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */,
 				CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,

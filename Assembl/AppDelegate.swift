@@ -7,18 +7,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         $0.button?.toolTip = loc("ASSEMBL", "App name")
         $0.menu = StatusMenu(title: loc("ASSEMBL", "App name"))
     }
-    
-    func applicationDidFinishLaunching(_ notification: Notification) {
+
+    func applicationDidFinishLaunching(_: Notification) {
         _ = statusItem.button
         setupEvents()
     }
-    
+
     var accessibilityPermission: Bool {
         let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeRetainedValue() as NSString: true]
         let result = AXIsProcessTrustedWithOptions(options)
         return result
     }
-    
+
     private func setupEvents() {
         KeyboardShortcuts.onKeyUp(for: .shortcut) {
             WindowMover.assemble()
