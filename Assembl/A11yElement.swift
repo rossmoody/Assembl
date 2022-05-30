@@ -13,7 +13,7 @@ class A11yElement {
     }
     
     var windowNumber: CGWindowID {
-        let windowNumber: CGWindowID = 0
+        var windowId = 0 as CGWindowID
         
         let matchingWindows = Screen.allWindowOnScreen.filter { (infoDict) -> Bool in
             if let bounds = infoDict[kCGWindowBounds as String] as? [String: CGFloat] {
@@ -27,8 +27,11 @@ class A11yElement {
             return false
         }
         
-        print(matchingWindows.debugDescription)
-        return windowNumber
+        if let firstMatch = matchingWindows.first {
+            windowId = firstMatch[kCGWindowNumber as String] as! CGWindowID
+        }
+        
+        return windowId
     }
     
     var title: String? {

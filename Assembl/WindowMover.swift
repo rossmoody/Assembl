@@ -4,7 +4,7 @@ import Foundation
 final class WindowMover {
     
     static func assemble() {
-        let resizableWindows = Screen.resizableWindows
+        let resizableWindows = resizableWindowsSortedBySize()
         
         if !resizableWindows.isEmpty {
             gridResizableWindows(windows: resizableWindows)
@@ -27,7 +27,7 @@ final class WindowMover {
                 x: Screen.rect.origin.x + size.width * CGFloat(column),
                 y: Screen.rect.origin.y + size.height * CGFloat(row))
             
-            if index + 1 == windows.count {
+            if (index + 1) == windows.count {
                 size.width = CGFloat((columns - column) * Int(size.width))
             }
             
@@ -42,14 +42,12 @@ final class WindowMover {
         
         return Screen.resizableWindows.sorted { (windowA, windowB) in
             if let rectA = windowA.rect, let rectB = windowB.rect {
-                if rectA.width == rectB.width {
-                    return rectA.height > rectB.height
+                if rectA.width != rectB.width {
+                    return rectA.width > rectB.width
                 }
-                
-                return rectA.width > rectB.width
             }
             
-            return windowA.processId < windowB.processId
+            return windowA.windowNumber < windowB.windowNumber
         }
     }
 }

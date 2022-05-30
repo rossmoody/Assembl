@@ -56,11 +56,11 @@ class Screen {
             for window in applicationWindows {
                 let element = A11yElement(window: window, processId: processId)
                 
-                element.logProperties()
-                
                 if element.isFullScreen {
                     return [A11yElement]()
                 }
+                
+                _ = element.windowNumber
                 
                 if element.isWindow
                     && !element.isSheet
