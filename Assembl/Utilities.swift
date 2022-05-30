@@ -15,5 +15,5 @@ func with<T>(_ item: T, update: (inout T) throws -> Void) rethrows -> T {
  Convenience function for referencing localized strings
  */
 func loc(_ key: String, _ comment: String) -> String {
-    return NSLocalizedString(key, comment: comment)
+    NSLocalizedString(key, comment: comment)
 }

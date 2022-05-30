@@ -69,7 +69,7 @@ class Screen {
     }
 
     private static var screenWithMouse: NSScreen {
-        return NSScreen.screens.first {
+        NSScreen.screens.first {
             NSMouseInRect(NSEvent.mouseLocation, $0.frame, false)
         } ?? NSScreen.screens[0]
     }

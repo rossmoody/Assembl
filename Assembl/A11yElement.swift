@@ -43,7 +43,7 @@ class A11yElement {
     }
 
     var isWindow: Bool {
-        return role == kAXWindowRole
+        role == kAXWindowRole
     }
 
     var isMinimized: Bool {
