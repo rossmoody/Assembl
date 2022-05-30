@@ -4,8 +4,10 @@ import Foundation
 final class WindowMover {
     
     static func assemble() {
-        if !Screen.resizableWindows.isEmpty {
-            gridResizableWindows(windows: self.resizableWindowsSortedBySize())
+        let resizableWindows = Screen.resizableWindows
+        
+        if !resizableWindows.isEmpty {
+            gridResizableWindows(windows: resizableWindows)
         }
     }
     
@@ -48,12 +50,6 @@ final class WindowMover {
             }
             
             return windowA.processId < windowB.processId
-        }
-    }
-    
-    private static func fixedWindowsSortedBySize() -> [A11yElement] {
-        Screen.nonSizableWindows.sorted { (windowA, windowB) in
-            windowA.rect?.width ?? 0 > windowB.rect?.width ?? 0
         }
     }
 }

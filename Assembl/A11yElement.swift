@@ -6,10 +6,29 @@ class A11yElement {
     let element: AXUIElement
     
     let processId: pid_t
-        
+    
     init(window: AXUIElement, processId: pid_t) {
         self.element = window
         self.processId = processId
+    }
+    
+    var windowNumber: CGWindowID {
+        let windowNumber: CGWindowID = 0
+        
+        let matchingWindows = Screen.allWindowOnScreen.filter { (infoDict) -> Bool in
+            if let bounds = infoDict[kCGWindowBounds as String] as? [String: CGFloat] {
+                if bounds["X"] == rect?.origin.x
+                    && bounds["Y"] == rect?.origin.y
+                    && bounds["Height"] == rect?.height
+                    && bounds["Width"] == rect?.width {
+                    return true
+                }
+            }
+            return false
+        }
+        
+        print(matchingWindows.debugDescription)
+        return windowNumber
     }
     
     var title: String? {
