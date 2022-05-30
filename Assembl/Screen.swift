@@ -27,7 +27,7 @@ class Screen {
     /**
      Applications represented by a processId can include multiple windows in an array. This loops through
      all unique process ids and returns an array of A11yElements of an application represented
-     on the current screen view.
+     on the screen with a mouse cursor.
      */
     static var allAxWindowsOnScreen: [A11yElement] {
         var validA11yElements = [A11yElement]()
@@ -50,15 +50,13 @@ class Screen {
             for window in applicationWindows {
                 let element = A11yElement(window: window, processId: processId)
 
-                if element.isFullScreen {
-                    return [A11yElement]()
-                }
-
                 if element.isWindow,
+                   element.position != nil,
+                   element.isOnScreenWithMouse,
                    !element.isSheet,
                    !element.isHidden,
                    !element.isMinimized,
-                   element.position != nil
+                   !element.isFullScreen
                 {
                     validA11yElements.append(element)
                 }
@@ -68,10 +66,11 @@ class Screen {
         return validA11yElements
     }
 
-    private static var screenWithMouse: NSScreen {
-        NSScreen.screens.first {
-            NSMouseInRect(NSEvent.mouseLocation, $0.frame, false)
-        } ?? NSScreen.screens[0]
+    static var screenWithMouse: NSScreen {
+        let mouseLocation = NSEvent.mouseLocation
+        let screens = NSScreen.screens
+        let screenWithMouse = (screens.first { NSMouseInRect(mouseLocation, $0.frame, false) })
+        return screenWithMouse ?? NSScreen.screens[0]
     }
 
     private static var allWindowIds: Set<pid_t> {

@@ -3,14 +3,14 @@ import Foundation
 
 final class WindowMover {
     static func assemble() {
-        //        let resizableWindows = resizableWindowsSortedBySize()
-        //
-        //        if !resizableWindows.isEmpty {
-        //            gridResizableWindows(windows: resizableWindows)
-        //        }
-        let screens = NSScreen.screens
-        let screenWithMouse = screens.first {
-            NSMouseInRect(NSEvent.mouseLocation, $0.frame, false)
+        let resizableWindows = resizableWindowsSortedBySize()
+
+        if !resizableWindows.isEmpty {
+            gridResizableWindows(windows: resizableWindows)
+        }
+
+        for window in NSScreen.screens {
+            print("Frame: \(window.frame)")
         }
     }
 
@@ -41,11 +41,13 @@ final class WindowMover {
     }
 
     private static func resizableWindowsSortedBySize() -> [A11yElement] {
-        for window in Screen.resizableWindows {
+        let resizableWindows = Screen.resizableWindows
+
+        for window in resizableWindows {
             window.set(size: CGSize(width: 0, height: 0))
         }
 
-        return Screen.resizableWindows.sorted { windowA, windowB in
+        return resizableWindows.sorted { windowA, windowB in
             if let rectA = windowA.rect, let rectB = windowB.rect {
                 if rectA.width != rectB.width {
                     return rectA.width > rectB.width

@@ -11,35 +11,51 @@ class A11yElement {
         self.processId = processId
     }
 
-    var windowNumber: CGWindowID {
-        var windowId = 0 as CGWindowID
-
-        let matchingWindows = Screen.allWindowOnScreen.filter { infoDict -> Bool in
-            if let bounds = infoDict[kCGWindowBounds as String] as? [String: CGFloat] {
-                if bounds["X"] == rect?.origin.x,
-                   bounds["Y"] == rect?.origin.y,
-                   bounds["Height"] == rect?.height,
-                   bounds["Width"] == rect?.width
-                {
-                    return true
-                }
-            }
-            return false
         }
-
-        if let firstMatch = matchingWindows.first {
-            windowId = firstMatch[kCGWindowNumber as String] as! CGWindowID
-        }
-
-        return windowId
-    }
-
     var title: String? {
         copyAttributeValue(of: kAXTitleAttribute)
     }
 
     var role: String? {
         copyAttributeValue(of: kAXRoleAttribute)
+    }
+
+    var position: CGPoint? {
+        if let result: AXValue = copyAttributeValue(of: kAXPositionAttribute) {
+            var positionPointer = CGPoint()
+            AXValueGetValue(result, .cgPoint, &positionPointer)
+            return positionPointer
+        }
+
+        return nil
+    }
+
+    var size: CGSize? {
+        if let result: AXValue = copyAttributeValue(of: kAXSizeAttribute) {
+            var sizePointer = CGSize()
+            AXValueGetValue(result, .cgSize, &sizePointer)
+            return sizePointer
+        }
+        return nil
+    }
+
+    var rect: CGRect? {
+        if let position = position as CGPoint?, let size = size as CGSize? {
+            return CGRect(origin: position, size: size)
+        }
+        return nil
+    }
+
+    var isOnScreenWithMouse: Bool {
+        if let windowPosition = position, let size = size {
+            let screenFrame = Screen.screenWithMouse.frame
+            let normalizedPosition = CGPoint(x: windowPosition.x,
+                                             y: screenFrame.origin.y + size.height)
+
+            return screenFrame.contains(normalizedPosition)
+        }
+
+        return false
     }
 
     var isWindow: Bool {
@@ -61,34 +77,9 @@ class A11yElement {
     }
 
     var isResizable: Bool {
-        var resizable: DarwinBoolean = true
+        var resizable: DarwinBoolean = false
         AXUIElementIsAttributeSettable(element, kAXSizeAttribute as CFString, &resizable)
         return resizable.boolValue
-    }
-
-    var position: CGPoint? {
-        if let result: AXValue = copyAttributeValue(of: kAXPositionAttribute) {
-            var positionPointer = CGPoint()
-            AXValueGetValue(result, .cgPoint, &positionPointer)
-            return positionPointer
-        }
-        return nil
-    }
-
-    var size: CGSize? {
-        if let result: AXValue = copyAttributeValue(of: kAXSizeAttribute) {
-            var sizePointer = CGSize()
-            AXValueGetValue(result, .cgSize, &sizePointer)
-            return sizePointer
-        }
-        return nil
-    }
-
-    var rect: CGRect? {
-        if let position = position as CGPoint?, let size = size as CGSize? {
-            return CGRect(origin: position, size: size)
-        }
-        return nil
     }
 
     var isFullScreen: Bool {
@@ -107,6 +98,29 @@ class A11yElement {
     var isSheet: Bool {
         let sheetRole: String? = copyAttributeValue(of: kAXSheetRole)
         return sheetRole == kAXSheetRole
+    }
+
+    var windowNumber: CGWindowID {
+        var windowId = 0 as CGWindowID
+
+        let matchingWindows = Screen.allWindowOnScreen.filter { infoDict -> Bool in
+            if let bounds = infoDict[kCGWindowBounds as String] as? [String: CGFloat] {
+                if bounds["X"] == rect?.origin.x,
+                   bounds["Y"] == rect?.origin.y,
+                   bounds["Height"] == rect?.height,
+                   bounds["Width"] == rect?.width
+                {
+                    return true
+                }
+            }
+            return false
+        }
+
+        if let firstMatch = matchingWindows.first {
+            windowId = firstMatch[kCGWindowNumber as String] as! CGWindowID
+        }
+
+        return windowId
     }
 
     func set(position to: CGPoint) {
@@ -143,27 +157,28 @@ class A11yElement {
         }
     }
 
-    private func copyAttributeValue<Type>(of attribute: String) -> Type? {
-        var ref: CFTypeRef?
-        let result = AXUIElementCopyAttributeValue(element, attribute as CFString, &ref)
-        if result == .success { return ref as? Type }
-        return nil
-    }
-
     func logProperties() {
         let computedProperties =
             [
                 "title": title,
                 "isResizable": isResizable,
-                "position": position,
-                "size": size,
-                "processId": processId,
+                "rect": rect,
+//                "processId": processId,
                 "isFullscreen": isFullScreen,
                 "isWindow": isWindow,
-                "isSheet": isSheet,
-                "role": role,
+//                "isSheet": isSheet,
+                "isOnMouseWindow": isOnScreenWithMouse,
+//                "role": role,
+                "screenFrame": Screen.screenWithMouse.frame,
             ] as [String: Any?]
 
         print(computedProperties as NSDictionary)
+    }
+
+    private func copyAttributeValue<Type>(of attribute: String) -> Type? {
+        var ref: CFTypeRef?
+        let result = AXUIElementCopyAttributeValue(element, attribute as CFString, &ref)
+        if result == .success { return ref as? Type }
+        return nil
     }
 }
