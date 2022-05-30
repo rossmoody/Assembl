@@ -11,7 +11,6 @@ class A11yElement {
         self.processId = processId
     }
 
-        }
     var title: String? {
         copyAttributeValue(of: kAXTitleAttribute)
     }
