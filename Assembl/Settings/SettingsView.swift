@@ -8,13 +8,8 @@ struct SettingsView: View {
                 .tabItem {
                     Label("General", systemImage: "gearshape")
                 }
-            
-            AssemblProView()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape")
-                }
         }
-        .frame(width: 400, height: 300, alignment: .topLeading)
+        .frame(width: 300, height: 200, alignment: .topLeading)
         .padding(30)
     }
 }

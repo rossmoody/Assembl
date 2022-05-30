@@ -4,10 +4,14 @@ import Foundation
 final class WindowMover {
     
     static func assemble() {
-        let resizableWindows = resizableWindowsSortedBySize()
-        
-        if !resizableWindows.isEmpty {
-            gridResizableWindows(windows: resizableWindows)
+        //        let resizableWindows = resizableWindowsSortedBySize()
+        //
+        //        if !resizableWindows.isEmpty {
+        //            gridResizableWindows(windows: resizableWindows)
+        //        }
+        let screens = NSScreen.screens
+        let screenWithMouse = screens.first {
+            NSMouseInRect(NSEvent.mouseLocation, $0.frame, false)
         }
     }
     

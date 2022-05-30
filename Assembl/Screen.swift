@@ -60,8 +60,6 @@ class Screen {
                     return [A11yElement]()
                 }
                 
-                _ = element.windowNumber
-                
                 if element.isWindow
                     && !element.isSheet
                     && !element.isHidden

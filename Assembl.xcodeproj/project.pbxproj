@@ -107,6 +107,13 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		CE549B7528453A2F00D9F917 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		CEA7194C282CC0C6006F889E = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +137,7 @@
 		CEA71957282CC0C6006F889E /* Assembl */ = {
 			isa = PBXGroup;
 			children = (
+				CE549B7528453A2F00D9F917 /* New Group */,
 				CEBDCCB0283C818C0083AFBF /* Info.plist */,
 				CEA7195C282CC0C9006F889E /* Assets.xcassets */,
 				CEA71961282CC0C9006F889E /* Assembl.entitlements */,
@@ -171,10 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEA7197A282CC0C9006F889E /* Build configuration list for PBXNativeTarget "Assembl" */;
 			buildPhases = (
+				CE8E330F284539AE001F5F22 /* ShellScript */,
 				CEA71951282CC0C6006F889E /* Sources */,
 				CEA71952282CC0C6006F889E /* Frameworks */,
 				CEA71953282CC0C6006F889E /* Resources */,
-				CE3626AD284077D700EC3E55 /* ShellScript */,
+				CE3626AD284077D700EC3E55 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -300,7 +309,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CE3626AD284077D700EC3E55 /* ShellScript */ = {
+		CE3626AD284077D700EC3E55 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+		CE8E330F284539AE001F5F22 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -315,7 +342,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
