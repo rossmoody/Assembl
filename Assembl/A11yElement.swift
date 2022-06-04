@@ -137,21 +137,25 @@ class A11yElement {
     }
 
     func set(size: CGSize, position: CGPoint) {
-        bringToFront()
         set(position: position)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.set(size: size)
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             self.set(position: position)
         }
     }
 
     func bringToFront() {
+        let isMainWindow: Bool? = copyAttributeValue(of: kAXMainAttribute)
+
+        if isMainWindow != true {
+            AXUIElementSetAttributeValue(element, kAXMainWindowAttribute as CFString, true as CFTypeRef)
+        }
+
         if let app = NSRunningApplication(processIdentifier: processId) {
-            AXUIElementSetAttributeValue(element, kAXMainAttribute as CFString, true as CFTypeRef)
             app.activate(options: .activateIgnoringOtherApps)
         }
     }

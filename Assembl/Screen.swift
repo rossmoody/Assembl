@@ -6,22 +6,10 @@ class Screen {
      The normalized screen rect for available screen real estate not including the dock or status menu bar
      */
     static var rect: CGRect {
-        let origin = CGPoint(x: screenWithMouse.visibleFrame.origin.x,
-                             y: screenWithMouse.frame.height - (screenWithMouse.visibleFrame.height + screenWithMouse.visibleFrame.origin.y))
-
-        return CGRect(origin: origin, size: screenWithMouse.visibleFrame.size)
-    }
-
-    static var resizableWindows: [A11yElement] {
-        allAxWindowsOnScreen.filter { window in
-            window.isResizable
-        }
-    }
-
-    static var fixedWindows: [A11yElement] {
-        allAxWindowsOnScreen.filter { window in
-            !window.isResizable
-        }
+        var normalizedRect = screenWithMouse.frame
+        let frameOfScreenWithMenuBar = NSScreen.screens[0].frame as CGRect
+        normalizedRect.origin.y = frameOfScreenWithMenuBar.height - screenWithMouse.frame.maxY
+        return normalizedRect
     }
 
     /**
