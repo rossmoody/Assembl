@@ -39,11 +39,9 @@ class Screen {
                                           kAXWindowsAttribute as CFString,
                                           &applicationWindows)
 
-            guard let applicationWindows = applicationWindows as? [AXUIElement] else {
-                continue
-            }
-
-            if applicationWindows.isEmpty {
+            guard let applicationWindows = applicationWindows as? [AXUIElement],
+                  !applicationWindows.isEmpty
+            else {
                 continue
             }
 

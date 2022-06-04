@@ -3,10 +3,10 @@ import Foundation
 
 final class WindowMover {
     static func assemble() {
-        let resizableWindows = resizableWindowsSortedBySize()
+        let sortedWindows = sortWindows()
 
         if !resizableWindows.isEmpty {
-            gridResizableWindows(windows: resizableWindows)
+            gridResizableWindows(windows: sortedWindows)
         }
 
         for window in NSScreen.screens {
@@ -40,7 +40,7 @@ final class WindowMover {
         }
     }
 
-    private static func resizableWindowsSortedBySize() -> [A11yElement] {
+    private static func sortWindows() -> [A11yElement] {
         let resizableWindows = Screen.resizableWindows
 
         for window in resizableWindows {
