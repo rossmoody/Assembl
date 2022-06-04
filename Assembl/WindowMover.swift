@@ -3,14 +3,12 @@ import Foundation
 
 final class WindowMover {
     static func assemble() {
-        let sortedWindows = sortWindows()
-
-        if !sortedWindows.isEmpty {
-            gridResizableWindows(windows: sortedWindows)
+        if !sortedResizableWindows.isEmpty {
+            gridResizableWindows(windows: sortedResizableWindows)
         }
 
-        for window in NSScreen.screens {
-            print("Frame: \(window.frame)")
+        if !sortedFixedWindows.isEmpty {
+            print(sortedFixedWindows)
         }
     }
 
@@ -40,14 +38,22 @@ final class WindowMover {
         }
     }
 
-    private static func sortWindows() -> [A11yElement] {
+    private static var sortedResizableWindows: [A11yElement] {
         let resizableWindows = Screen.resizableWindows
 
         for window in resizableWindows {
             window.set(size: CGSize(width: 0, height: 0))
         }
 
-        return resizableWindows.sorted { windowA, windowB in
+        return sortWindows(resizableWindows)
+    }
+
+    private static var sortedFixedWindows: [A11yElement] {
+        sortWindows(Screen.fixedWindows)
+    }
+
+    private static func sortWindows(_ windows: [A11yElement]) -> [A11yElement] {
+        windows.sorted { windowA, windowB in
             if let rectA = windowA.rect, let rectB = windowB.rect {
                 if rectA.width != rectB.width {
                     return rectA.width > rectB.width

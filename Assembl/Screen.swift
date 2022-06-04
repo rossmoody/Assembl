@@ -18,7 +18,7 @@ class Screen {
         }
     }
 
-    static var nonSizableWindows: [A11yElement] {
+    static var fixedWindows: [A11yElement] {
         allAxWindowsOnScreen.filter { window in
             !window.isResizable
         }
