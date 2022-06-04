@@ -5,7 +5,7 @@ final class WindowMover {
     static func assemble() {
         let sortedWindows = sortWindows()
 
-        if !resizableWindows.isEmpty {
+        if !sortedWindows.isEmpty {
             gridResizableWindows(windows: sortedWindows)
         }
 
