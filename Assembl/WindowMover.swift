@@ -3,7 +3,12 @@ import Foundation
 
 final class WindowMover {
     static func assemble() {
-        gridWindows(sortWindows(Screen.allAxWindowsOnScreen))
+        var windows = Screen.allAxWindowsOnScreen
+
+        if !windows.isEmpty {
+            windows = sortWindows(windows)
+            gridWindows(windows)
+        }
     }
 
     private static func gridWindows(_ windows: [A11yElement]) {
@@ -20,14 +25,19 @@ final class WindowMover {
             let column = index % Int(columns)
             let row = index / Int(columns)
 
-            if isLastWindow {
-                size.width = CGFloat((columns - column) * Int(size.width))
-            }
-
             let position = CGPoint(
                 x: Screen.rect.origin.x + size.width * CGFloat(column),
                 y: Screen.rect.origin.y + size.height * CGFloat(row)
             )
+
+            if !window.isResizable {
+                window.set(position: position)
+                continue
+            }
+
+            if isLastWindow {
+                size.width = CGFloat((columns - column) * Int(size.width))
+            }
 
             window.set(size: size, position: position)
         }

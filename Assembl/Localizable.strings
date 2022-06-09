@@ -1,6 +1,6 @@
 "ASSEMBL" = "Assembl";
-"PREFERENCES" = "Preferences...";
+"PREFERENCES" = "Preferences";
 "ABOUT" = "About";
-"SUPPORT" = "Support";
+"SUPPORT" = "Get help";
 "QUIT" = "Quit";
-"CHECK_FOR_UPDATES" = "Check for updates";
+"SUBMIT_BUG" = "Submit a bug";

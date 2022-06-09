@@ -17,6 +17,15 @@
         "branch" : "main",
         "revision" : "e8171b3e38a2816f579f58f3dac1522aa39efe41"
       }
+    },
+    {
+      "identity" : "swiftuiwindow",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mortenjust/SwiftUIWindow",
+      "state" : {
+        "branch" : "main",
+        "revision" : "358573ae1ddd5345d7a01e3f73002ac5b5db924f"
+      }
     }
   ],
   "version" : 2

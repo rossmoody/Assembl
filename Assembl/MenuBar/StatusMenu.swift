@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SwiftUIWindow
 
 final class StatusMenu: NSMenu, NSMenuDelegate {
     @Environment(\.openURL) var openURL
@@ -27,8 +28,8 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
                 keyEquivalent: "")
             .target = self
 
-        addItem(withTitle: loc("CHECK_FOR_UPDATES", "Menu label to manually check for updates from App Store."),
-                action: #selector(checkForUpdates),
+        addItem(withTitle: loc("SUBMIT_BUG", "Menu label to send a bug report."),
+                action: #selector(handleSubmitBugAction),
                 keyEquivalent: "")
             .target = self
 
@@ -50,9 +51,7 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
     }
 
     @objc private func handleAboutAction() {
-        // TODO:
-        NSApp.orderFrontStandardAboutPanel(options: [:])
-        NSApp.activate(ignoringOtherApps: true)
+        NSApp.orderFrontStandardAboutPanel()
     }
 
     @objc private func handleSupportAction() {
@@ -64,7 +63,11 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
         NSApp.activate(ignoringOtherApps: true)
     }
 
-    @objc private func checkForUpdates() {
-        print("To do")
+    @objc private func handleSubmitBugAction() {
+        SwiftUIWindow.open { _ in
+            SubmitBug()
+                .frame(width: 300, height: 200, alignment: .topLeading)
+                .padding(30)
+        }
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE0B907D283712A8007E960F /* KeyboardShortcuts */; };
+		CE2BCB1A284D3306002656DA /* SubmitBugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BCB19284D3306002656DA /* SubmitBugView.swift */; };
+		CE2BCB1D284D382F002656DA /* SwiftUIWindow in Frameworks */ = {isa = PBXBuildFile; productRef = CE2BCB1C284D382F002656DA /* SwiftUIWindow */; };
 		CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CCE28372C2C0001A05B /* A11yElement.swift */; };
 		CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CD32837F16F0001A05B /* WindowMover.swift */; };
 		CE3626AB284076CB00EC3E55 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = CE3626AA284076CB00EC3E55 /* LaunchAtLogin */; };
@@ -23,7 +25,6 @@
 		CEA71975282CC0C9006F889E /* AssemblUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71974282CC0C9006F889E /* AssemblUITests.swift */; };
 		CEA71977282CC0C9006F889E /* AssemblUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */; };
 		CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71989282DFAB5006F889E /* AppDelegate.swift */; };
-		CEBDCCB2283DC0D30083AFBF /* AssemblProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDCCB1283DC0D30083AFBF /* AssemblProView.swift */; };
 		CEBDCCB4283DE8080083AFBF /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDCCB3283DE8080083AFBF /* GeneralView.swift */; };
 		CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C42830755A00E2C5CB /* Utilities.swift */; };
 		CEC4A5C7283095DB00E2C5CB /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE2BCB19284D3306002656DA /* SubmitBugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBugView.swift; sourceTree = "<group>"; };
 		CE327CCE28372C2C0001A05B /* A11yElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yElement.swift; sourceTree = "<group>"; };
 		CE327CD32837F16F0001A05B /* WindowMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMover.swift; sourceTree = "<group>"; };
 		CE3626AE2841D81300EC3E55 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -66,7 +68,6 @@
 		CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEA71989282DFAB5006F889E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBDCCB0283C818C0083AFBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		CEBDCCB1283DC0D30083AFBF /* AssemblProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblProView.swift; sourceTree = "<group>"; };
 		CEBDCCB3283DE8080083AFBF /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		CEC4A5C42830755A00E2C5CB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2BCB1D284D382F002656DA /* SwiftUIWindow in Frameworks */,
 				CE3626AB284076CB00EC3E55 /* LaunchAtLogin in Frameworks */,
 				CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */,
 				CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */,
@@ -104,10 +106,19 @@
 			isa = PBXGroup;
 			children = (
 				CE3626AE2841D81300EC3E55 /* SettingsView.swift */,
-				CEBDCCB1283DC0D30083AFBF /* AssemblProView.swift */,
 				CEBDCCB3283DE8080083AFBF /* GeneralView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		CE45FACF284D629B00F3B0E8 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE327CD228372DD20001A05B /* Settings */,
+				CE2BCB19284D3306002656DA /* SubmitBugView.swift */,
+				CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */,
+			);
+			path = MenuBar;
 			sourceTree = "<group>";
 		};
 		CE6243962845429E004965D5 /* BuildTools */ = {
@@ -152,8 +163,7 @@
 				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
 				CE49FD272830B73700B0B72A /* Constants.swift */,
 				CE52BEC8283AE4020085A204 /* Screen.swift */,
-				CE327CD228372DD20001A05B /* Settings */,
-				CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */,
+				CE45FACF284D629B00F3B0E8 /* MenuBar */,
 				CEC4A5C42830755A00E2C5CB /* Utilities.swift */,
 				CE327CD32837F16F0001A05B /* WindowMover.swift */,
 			);
@@ -199,6 +209,7 @@
 				CE3C533C283042A1008E02B8 /* KeyboardShortcuts */,
 				CE0B907D283712A8007E960F /* KeyboardShortcuts */,
 				CE3626AA284076CB00EC3E55 /* LaunchAtLogin */,
+				CE2BCB1C284D382F002656DA /* SwiftUIWindow */,
 			);
 			productName = Assembl;
 			productReference = CEA71955282CC0C6006F889E /* Assembl.app */;
@@ -275,6 +286,7 @@
 			packageReferences = (
 				CE3C533B283042A1008E02B8 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				CE3626A9284076CB00EC3E55 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				CE2BCB1B284D382F002656DA /* XCRemoteSwiftPackageReference "SwiftUIWindow" */,
 			);
 			productRefGroup = CEA71956282CC0C6006F889E /* Products */;
 			projectDirPath = "";
@@ -356,7 +368,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBDCCB2283DC0D30083AFBF /* AssemblProView.swift in Sources */,
 				CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */,
 				CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */,
 				CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */,
@@ -368,6 +379,7 @@
 				CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */,
 				CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
+				CE2BCB1A284D3306002656DA /* SubmitBugView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +558,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rossmoody.Assembl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -575,6 +588,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rossmoody.Assembl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -697,6 +711,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE2BCB1B284D382F002656DA /* XCRemoteSwiftPackageReference "SwiftUIWindow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mortenjust/SwiftUIWindow";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		CE3626A9284076CB00EC3E55 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
@@ -720,6 +742,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE3C533B283042A1008E02B8 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		CE2BCB1C284D382F002656DA /* SwiftUIWindow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE2BCB1B284D382F002656DA /* XCRemoteSwiftPackageReference "SwiftUIWindow" */;
+			productName = SwiftUIWindow;
 		};
 		CE3626AA284076CB00EC3E55 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
