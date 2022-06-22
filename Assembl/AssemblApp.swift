@@ -6,8 +6,15 @@ struct AssemblApp: App {
     @NSApplicationDelegateAdaptor private var appDelegate: AppDelegate
 
     var body: some Scene {
+        WindowGroup {
+            WelcomeWindow().welcomeWindowStyles()
+        }
+        .windowStyle(.hiddenTitleBar)
+
         Settings {
-            SettingsView()
+            TabView {
+                General().tabItem { Label("General", systemImage: "gearshape") }
+            }.settingsWindowStyles()
         }
     }
 }
