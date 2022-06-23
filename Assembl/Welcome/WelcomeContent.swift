@@ -34,7 +34,6 @@ struct WelcomeContent: View {
         default:
             HeadlineDescription(title: "Set a keyboard shortcut",
                                 description: "Assembl uses this shortcut to organize available windows from the screen your mouse cursor is on. It can be changed later in Preferences.")
-            
         }
     }
 }
