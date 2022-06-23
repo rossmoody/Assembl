@@ -1,13 +1,16 @@
 import SwiftUI
 
 struct WelcomeWindow: View {
-    @ObservedObject var model = ProgressBarModel()
+    @State var progress = 0
 
     var body: some View {
         VStack {
-            VStack {
-                WelcomeContent(progress: model.progress)
-                WelcomeFooter(model: model, progress: model.progress)
+            WelcomeGraphic(progress: progress)
+
+            VStack(alignment: .center) {
+                WelcomeContent(progress: progress)
+                Spacer()
+                WelcomeFooter(progress: $progress)
             }.padding(40)
         }
     }

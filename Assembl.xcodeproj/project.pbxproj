@@ -12,6 +12,9 @@
 		CE0748BA285E5AFB008F51FB /* WelcomeFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0748B9285E5AFB008F51FB /* WelcomeFooter.swift */; };
 		CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE0B907D283712A8007E960F /* KeyboardShortcuts */; };
 		CE13A6E72862C25600AAB4C1 /* WelcomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13A6E62862C25600AAB4C1 /* WelcomeContent.swift */; };
+		CE13A6E92862CEFF00AAB4C1 /* WelcomeGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13A6E82862CEFF00AAB4C1 /* WelcomeGraphic.swift */; };
+		CE13A6ED28641E3000AAB4C1 /* ProgressDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13A6EC28641E3000AAB4C1 /* ProgressDot.swift */; };
+		CE13A6F0286421DD00AAB4C1 /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = CE13A6EF286421DD00AAB4C1 /* SwiftyGif */; };
 		CE2BCB1A284D3306002656DA /* SubmitFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BCB19284D3306002656DA /* SubmitFeedbackView.swift */; };
 		CE2BCB1D284D382F002656DA /* SwiftUIWindow in Frameworks */ = {isa = PBXBuildFile; productRef = CE2BCB1C284D382F002656DA /* SwiftUIWindow */; };
 		CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CCE28372C2C0001A05B /* A11yElement.swift */; };
@@ -55,6 +58,8 @@
 		CE0748B7285A630A008F51FB /* WelcomeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWindow.swift; sourceTree = "<group>"; };
 		CE0748B9285E5AFB008F51FB /* WelcomeFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeFooter.swift; sourceTree = "<group>"; };
 		CE13A6E62862C25600AAB4C1 /* WelcomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeContent.swift; sourceTree = "<group>"; };
+		CE13A6E82862CEFF00AAB4C1 /* WelcomeGraphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeGraphic.swift; sourceTree = "<group>"; };
+		CE13A6EC28641E3000AAB4C1 /* ProgressDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDot.swift; sourceTree = "<group>"; };
 		CE2BCB19284D3306002656DA /* SubmitFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitFeedbackView.swift; sourceTree = "<group>"; };
 		CE327CCE28372C2C0001A05B /* A11yElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yElement.swift; sourceTree = "<group>"; };
 		CE327CD32837F16F0001A05B /* WindowMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMover.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 				CE3626AB284076CB00EC3E55 /* LaunchAtLogin in Frameworks */,
 				CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */,
 				CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */,
+				CE13A6F0286421DD00AAB4C1 /* SwiftyGif in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +119,9 @@
 			children = (
 				CE0748B7285A630A008F51FB /* WelcomeWindow.swift */,
 				CE0748B9285E5AFB008F51FB /* WelcomeFooter.swift */,
+				CE13A6EC28641E3000AAB4C1 /* ProgressDot.swift */,
 				CE13A6E62862C25600AAB4C1 /* WelcomeContent.swift */,
+				CE13A6E82862CEFF00AAB4C1 /* WelcomeGraphic.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 				CE0B907D283712A8007E960F /* KeyboardShortcuts */,
 				CE3626AA284076CB00EC3E55 /* LaunchAtLogin */,
 				CE2BCB1C284D382F002656DA /* SwiftUIWindow */,
+				CE13A6EF286421DD00AAB4C1 /* SwiftyGif */,
 			);
 			productName = Assembl;
 			productReference = CEA71955282CC0C6006F889E /* Assembl.app */;
@@ -304,6 +313,7 @@
 				CE3C533B283042A1008E02B8 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				CE3626A9284076CB00EC3E55 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 				CE2BCB1B284D382F002656DA /* XCRemoteSwiftPackageReference "SwiftUIWindow" */,
+				CE13A6EE286421DD00AAB4C1 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
 			);
 			productRefGroup = CEA71956282CC0C6006F889E /* Products */;
 			projectDirPath = "";
@@ -394,6 +404,8 @@
 				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
 				CE0748BA285E5AFB008F51FB /* WelcomeFooter.swift in Sources */,
 				CEBDCCB4283DE8080083AFBF /* General.swift in Sources */,
+				CE13A6ED28641E3000AAB4C1 /* ProgressDot.swift in Sources */,
+				CE13A6E92862CEFF00AAB4C1 /* WelcomeGraphic.swift in Sources */,
 				CE52BEC9283AE4020085A204 /* Screen.swift in Sources */,
 				CEC4A5C7283095DB00E2C5CB /* StatusMenu.swift in Sources */,
 				CE8C3E482845425600BFE461 /* Empty.swift in Sources */,
@@ -731,6 +743,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE13A6EE286421DD00AAB4C1 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		CE2BCB1B284D382F002656DA /* XCRemoteSwiftPackageReference "SwiftUIWindow" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mortenjust/SwiftUIWindow";
@@ -762,6 +782,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE3C533B283042A1008E02B8 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		CE13A6EF286421DD00AAB4C1 /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE13A6EE286421DD00AAB4C1 /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
 		};
 		CE2BCB1C284D382F002656DA /* SwiftUIWindow */ = {
 			isa = XCSwiftPackageProductDependency;
