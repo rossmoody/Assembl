@@ -17,8 +17,8 @@ struct WelcomeGraphic: View {
 
         default:
             Rectangle()
-                .frame(width: 600, height: 240, alignment: .top)
-                .foregroundColor(.gray)
+                .frame(width: 480, height: 240, alignment: .top)
+                .foregroundColor(.green)
         }
     }
 }

@@ -33,6 +33,7 @@
 		CEBDCCB4283DE8080083AFBF /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDCCB3283DE8080083AFBF /* General.swift */; };
 		CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C42830755A00E2C5CB /* Utilities.swift */; };
 		CEC4A5C7283095DB00E2C5CB /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */; };
+		CECF92A1286569BE00890B0B /* WelcomeVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF92A0286569BE00890B0B /* WelcomeVideoPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		CEBDCCB3283DE8080083AFBF /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		CEC4A5C42830755A00E2C5CB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
+		CECF92A0286569BE00890B0B /* WelcomeVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVideoPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				CE13A6EC28641E3000AAB4C1 /* ProgressDot.swift */,
 				CE13A6E62862C25600AAB4C1 /* WelcomeContent.swift */,
 				CE13A6E82862CEFF00AAB4C1 /* WelcomeGraphic.swift */,
+				CECF92A0286569BE00890B0B /* WelcomeVideoPlayer.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				CEC4A5C7283095DB00E2C5CB /* StatusMenu.swift in Sources */,
 				CE8C3E482845425600BFE461 /* Empty.swift in Sources */,
 				CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */,
+				CECF92A1286569BE00890B0B /* WelcomeVideoPlayer.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
 				CE2BCB1A284D3306002656DA /* SubmitFeedbackView.swift in Sources */,
 			);
