@@ -2,7 +2,7 @@ import KeyboardShortcuts
 import LaunchAtLogin
 import SwiftUI
 
-struct General: View {
+struct GeneralView: View {
     @AppStorage("showDockIcon") private var showDockIcon = false
 
     var body: some View {
@@ -36,7 +36,7 @@ struct General: View {
 
 struct GeneralViewPreview: PreviewProvider {
     static var previews: some View {
-        General()
+        GeneralView()
             .frame(width: 600, height: 600, alignment: .top)
             .padding()
     }

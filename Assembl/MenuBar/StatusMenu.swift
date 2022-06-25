@@ -41,12 +41,12 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
         addItem(.separator())
 
         addItem(withTitle: loc("QUIT", "Label to quit the app."),
-                action: #selector(handleQuit),
+                action: #selector(quit),
                 keyEquivalent: "q")
             .target = self
     }
 
-    @objc private func handleQuit() {
+    @objc private func quit() {
         NSApp.terminate(nil)
     }
 
@@ -65,7 +65,9 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
 
     @objc private func handleSubmitBugAction() {
         SwiftUIWindow.open { _ in
-            SubmitFeedback().submitFeedbackStyles()
+            SubmitBug()
+                .frame(width: 300, height: 200, alignment: .topLeading)
+                .padding(30)
         }
     }
 }
