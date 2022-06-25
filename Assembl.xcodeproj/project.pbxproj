@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE0B907D283712A8007E960F /* KeyboardShortcuts */; };
+		CE24DD7B2867CCE50025EB6A /* WelcomeFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD742867CCE50025EB6A /* WelcomeFooter.swift */; };
+		CE24DD7C2867CCE50025EB6A /* WelcomeVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD752867CCE50025EB6A /* WelcomeVideoPlayer.swift */; };
+		CE24DD7D2867CCE50025EB6A /* WelcomeGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD762867CCE50025EB6A /* WelcomeGraphic.swift */; };
+		CE24DD7E2867CCE50025EB6A /* WelcomeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD772867CCE50025EB6A /* WelcomeWindow.swift */; };
+		CE24DD7F2867CCE50025EB6A /* WelcomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD782867CCE50025EB6A /* WelcomeContent.swift */; };
+		CE24DD802867CCE50025EB6A /* ProgressDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD792867CCE50025EB6A /* ProgressDot.swift */; };
+		CE24DD812867CCE50025EB6A /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD7A2867CCE50025EB6A /* Styles.swift */; };
 		CE2BCB1A284D3306002656DA /* SubmitBugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BCB19284D3306002656DA /* SubmitBugView.swift */; };
 		CE2BCB1D284D382F002656DA /* SwiftUIWindow in Frameworks */ = {isa = PBXBuildFile; productRef = CE2BCB1C284D382F002656DA /* SwiftUIWindow */; };
 		CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CCE28372C2C0001A05B /* A11yElement.swift */; };
@@ -48,6 +55,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE24DD742867CCE50025EB6A /* WelcomeFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeFooter.swift; sourceTree = "<group>"; };
+		CE24DD752867CCE50025EB6A /* WelcomeVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVideoPlayer.swift; sourceTree = "<group>"; };
+		CE24DD762867CCE50025EB6A /* WelcomeGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeGraphic.swift; sourceTree = "<group>"; };
+		CE24DD772867CCE50025EB6A /* WelcomeWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWindow.swift; sourceTree = "<group>"; };
+		CE24DD782867CCE50025EB6A /* WelcomeContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeContent.swift; sourceTree = "<group>"; };
+		CE24DD792867CCE50025EB6A /* ProgressDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressDot.swift; sourceTree = "<group>"; };
+		CE24DD7A2867CCE50025EB6A /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		CE2BCB19284D3306002656DA /* SubmitBugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBugView.swift; sourceTree = "<group>"; };
 		CE327CCE28372C2C0001A05B /* A11yElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yElement.swift; sourceTree = "<group>"; };
 		CE327CD32837F16F0001A05B /* WindowMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMover.swift; sourceTree = "<group>"; };
@@ -102,6 +116,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE24DD732867CCE50025EB6A /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				CE24DD742867CCE50025EB6A /* WelcomeFooter.swift */,
+				CE24DD752867CCE50025EB6A /* WelcomeVideoPlayer.swift */,
+				CE24DD762867CCE50025EB6A /* WelcomeGraphic.swift */,
+				CE24DD772867CCE50025EB6A /* WelcomeWindow.swift */,
+				CE24DD782867CCE50025EB6A /* WelcomeContent.swift */,
+				CE24DD792867CCE50025EB6A /* ProgressDot.swift */,
+			);
+			name = Welcome;
+			path = ../Welcome;
+			sourceTree = "<group>";
+		};
 		CE327CD228372DD20001A05B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +142,6 @@
 		CE45FACF284D629B00F3B0E8 /* MenuBar */ = {
 			isa = PBXGroup;
 			children = (
-				CE327CD228372DD20001A05B /* Settings */,
 				CE2BCB19284D3306002656DA /* SubmitBugView.swift */,
 				CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */,
 			);
@@ -162,9 +189,12 @@
 				CEA71989282DFAB5006F889E /* AppDelegate.swift */,
 				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
 				CE49FD272830B73700B0B72A /* Constants.swift */,
-				CE52BEC8283AE4020085A204 /* Screen.swift */,
 				CE45FACF284D629B00F3B0E8 /* MenuBar */,
+				CE52BEC8283AE4020085A204 /* Screen.swift */,
+				CE327CD228372DD20001A05B /* Settings */,
+				CE24DD7A2867CCE50025EB6A /* Styles.swift */,
 				CEC4A5C42830755A00E2C5CB /* Utilities.swift */,
+				CE24DD732867CCE50025EB6A /* Welcome */,
 				CE327CD32837F16F0001A05B /* WindowMover.swift */,
 			);
 			path = Assembl;
@@ -370,15 +400,22 @@
 			files = (
 				CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */,
 				CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */,
+				CE24DD7E2867CCE50025EB6A /* WelcomeWindow.swift in Sources */,
 				CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */,
 				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
+				CE24DD7B2867CCE50025EB6A /* WelcomeFooter.swift in Sources */,
 				CEBDCCB4283DE8080083AFBF /* GeneralView.swift in Sources */,
+				CE24DD7F2867CCE50025EB6A /* WelcomeContent.swift in Sources */,
 				CE52BEC9283AE4020085A204 /* Screen.swift in Sources */,
+				CE24DD7C2867CCE50025EB6A /* WelcomeVideoPlayer.swift in Sources */,
 				CEC4A5C7283095DB00E2C5CB /* StatusMenu.swift in Sources */,
 				CE8C3E482845425600BFE461 /* Empty.swift in Sources */,
+				CE24DD7D2867CCE50025EB6A /* WelcomeGraphic.swift in Sources */,
+				CE24DD812867CCE50025EB6A /* Styles.swift in Sources */,
 				CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */,
 				CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
+				CE24DD802867CCE50025EB6A /* ProgressDot.swift in Sources */,
 				CE2BCB1A284D3306002656DA /* SubmitBugView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
