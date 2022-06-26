@@ -133,13 +133,13 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		CE45FACF284D629B00F3B0E8 /* MenuBar */ = {
+		CE45FACF284D629B00F3B0E8 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				CE2BCB19284D3306002656DA /* SubmitBugView.swift */,
 				CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */,
 			);
-			path = MenuBar;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		CE6243962845429E004965D5 /* BuildTools */ = {
@@ -181,7 +181,7 @@
 				CEA71989282DFAB5006F889E /* AppDelegate.swift */,
 				CEA71958282CC0C6006F889E /* AssemblApp.swift */,
 				CE49FD272830B73700B0B72A /* Constants.swift */,
-				CE45FACF284D629B00F3B0E8 /* MenuBar */,
+				CE45FACF284D629B00F3B0E8 /* Menu */,
 				CE52BEC8283AE4020085A204 /* Screen.swift */,
 				CE327CD228372DD20001A05B /* Settings */,
 				CE24DD7A2867CCE50025EB6A /* Styles.swift */,

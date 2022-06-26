@@ -71,9 +71,8 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
 
     @objc private func handleSubmitBugAction() {
         SwiftUIWindow.open { _ in
-            SubmitBug()
-                .frame(width: 300, height: 200, alignment: .topLeading)
-                .padding(30)
+            SubmitFeedback()
+                .submitFeedbackStyles()
         }
         bringAppToFront()
     }
