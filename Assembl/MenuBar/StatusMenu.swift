@@ -28,6 +28,11 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
                 keyEquivalent: "")
             .target = self
 
+        addItem(withTitle: loc("QUICK_START", "Menu label for onboarding experience."),
+                action: #selector(handleQuickStartAction),
+                keyEquivalent: "")
+            .target = self
+
         addItem(withTitle: loc("SUBMIT_BUG", "Menu label to send a bug report."),
                 action: #selector(handleSubmitBugAction),
                 keyEquivalent: "")
@@ -52,6 +57,7 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
 
     @objc private func handleAboutAction() {
         NSApp.orderFrontStandardAboutPanel()
+        NSApp.activate(ignoringOtherApps: true)
     }
 
     @objc private func handleSupportAction() {
@@ -68,6 +74,12 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
             SubmitBug()
                 .frame(width: 300, height: 200, alignment: .topLeading)
                 .padding(30)
+        }
+    }
+
+    @objc private func handleQuickStartAction() {
+        SwiftUIWindow.open { _ in
+            WelcomeView().welcomeWindowStyles()
         }
     }
 }

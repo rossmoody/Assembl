@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct WelcomeWindow: View {
+struct WelcomeView: View {
     @State var progress = 0
 
     var body: some View {
@@ -18,7 +18,7 @@ struct WelcomeWindow: View {
 
 struct WelcomeWindowPreview: PreviewProvider {
     static var previews: some View {
-        WelcomeWindow()
+        WelcomeView()
             .welcomeWindowStyles()
     }
 }

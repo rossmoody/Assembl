@@ -1,6 +1,7 @@
 "ASSEMBL" = "Assembl";
 "PREFERENCES" = "Preferences";
-"ABOUT" = "About";
-"SUPPORT" = "Get help";
+"ABOUT" = "About Assembl";
+"QUICK_START" = "Quick start guide";
+"SUPPORT" = "Get support";
 "QUIT" = "Quit";
 "SUBMIT_BUG" = "Submit a bug";

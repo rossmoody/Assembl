@@ -11,7 +11,7 @@
 		CE24DD7B2867CCE50025EB6A /* WelcomeFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD742867CCE50025EB6A /* WelcomeFooter.swift */; };
 		CE24DD7C2867CCE50025EB6A /* WelcomeVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD752867CCE50025EB6A /* WelcomeVideoPlayer.swift */; };
 		CE24DD7D2867CCE50025EB6A /* WelcomeGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD762867CCE50025EB6A /* WelcomeGraphic.swift */; };
-		CE24DD7E2867CCE50025EB6A /* WelcomeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD772867CCE50025EB6A /* WelcomeWindow.swift */; };
+		CE24DD7E2867CCE50025EB6A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD772867CCE50025EB6A /* WelcomeView.swift */; };
 		CE24DD7F2867CCE50025EB6A /* WelcomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD782867CCE50025EB6A /* WelcomeContent.swift */; };
 		CE24DD802867CCE50025EB6A /* ProgressDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD792867CCE50025EB6A /* ProgressDot.swift */; };
 		CE24DD812867CCE50025EB6A /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD7A2867CCE50025EB6A /* Styles.swift */; };
@@ -58,7 +58,7 @@
 		CE24DD742867CCE50025EB6A /* WelcomeFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeFooter.swift; sourceTree = "<group>"; };
 		CE24DD752867CCE50025EB6A /* WelcomeVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVideoPlayer.swift; sourceTree = "<group>"; };
 		CE24DD762867CCE50025EB6A /* WelcomeGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeGraphic.swift; sourceTree = "<group>"; };
-		CE24DD772867CCE50025EB6A /* WelcomeWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWindow.swift; sourceTree = "<group>"; };
+		CE24DD772867CCE50025EB6A /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		CE24DD782867CCE50025EB6A /* WelcomeContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeContent.swift; sourceTree = "<group>"; };
 		CE24DD792867CCE50025EB6A /* ProgressDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressDot.swift; sourceTree = "<group>"; };
 		CE24DD7A2867CCE50025EB6A /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				CE24DD742867CCE50025EB6A /* WelcomeFooter.swift */,
 				CE24DD752867CCE50025EB6A /* WelcomeVideoPlayer.swift */,
 				CE24DD762867CCE50025EB6A /* WelcomeGraphic.swift */,
-				CE24DD772867CCE50025EB6A /* WelcomeWindow.swift */,
+				CE24DD772867CCE50025EB6A /* WelcomeView.swift */,
 				CE24DD782867CCE50025EB6A /* WelcomeContent.swift */,
 				CE24DD792867CCE50025EB6A /* ProgressDot.swift */,
 			);
@@ -160,10 +160,10 @@
 		CEA7194C282CC0C6006F889E = {
 			isa = PBXGroup;
 			children = (
-				CE6243962845429E004965D5 /* BuildTools */,
 				CEA71957282CC0C6006F889E /* Assembl */,
-				CEA71969282CC0C9006F889E /* AssemblTests */,
 				CEA71973282CC0C9006F889E /* AssemblUITests */,
+				CEA71969282CC0C9006F889E /* AssemblTests */,
+				CE6243962845429E004965D5 /* BuildTools */,
 				CEA71956282CC0C6006F889E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 			files = (
 				CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */,
 				CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */,
-				CE24DD7E2867CCE50025EB6A /* WelcomeWindow.swift in Sources */,
+				CE24DD7E2867CCE50025EB6A /* WelcomeView.swift in Sources */,
 				CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */,
 				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
 				CE24DD7B2867CCE50025EB6A /* WelcomeFooter.swift in Sources */,
@@ -488,7 +488,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_APP_SANDBOX = NO;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -552,7 +552,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_APP_SANDBOX = NO;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -590,13 +590,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assembl/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = rossmoody.Assembl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -620,13 +622,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assembl/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = rossmoody.Assembl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

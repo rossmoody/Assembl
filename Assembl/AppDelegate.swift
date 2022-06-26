@@ -1,5 +1,6 @@
 import Cocoa
 import KeyboardShortcuts
+import SwiftUIWindow
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var statusItem = with(NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)) {
@@ -22,6 +23,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func setupEvents() {
         KeyboardShortcuts.onKeyUp(for: .shortcut) {
             WindowMover.assemble()
+        }
+    }
+
+    private func onboardUser() {
+        let key = "isFirstLaunch"
+        if UserDefaults.standard.bool(forKey: key) == false {
+            UserDefaults.standard.set(true, forKey: key)
+            showWelcomeExperience()
+        }
+    }
+
+    func showWelcomeExperience() {
+        SwiftUIWindow.open { _ in
+            WelcomeView().welcomeWindowStyles()
         }
     }
 }
