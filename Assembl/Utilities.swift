@@ -17,3 +17,7 @@ func with<T>(_ item: T, update: (inout T) throws -> Void) rethrows -> T {
 func loc(_ key: String, _ comment: String) -> String {
     NSLocalizedString(key, comment: comment)
 }
+
+func bringAppToFront() {
+    NSApp.activate(ignoringOtherApps: true)
+}

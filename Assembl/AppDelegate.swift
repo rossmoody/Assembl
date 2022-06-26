@@ -38,5 +38,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SwiftUIWindow.open { _ in
             WelcomeView().welcomeWindowStyles()
         }
+        bringAppToFront()
     }
 }

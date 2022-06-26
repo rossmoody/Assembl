@@ -30,7 +30,7 @@ struct GeneralView: View {
 
     private func setDockIcon(state showDockIcon: Bool) {
         NSApp.setActivationPolicy(showDockIcon ? .regular : .accessory)
-        NSApp.activate(ignoringOtherApps: true)
+        bringAppToFront()
     }
 }
 

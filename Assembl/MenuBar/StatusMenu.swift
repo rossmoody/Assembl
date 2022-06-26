@@ -57,7 +57,7 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
 
     @objc private func handleAboutAction() {
         NSApp.orderFrontStandardAboutPanel()
-        NSApp.activate(ignoringOtherApps: true)
+        bringAppToFront()
     }
 
     @objc private func handleSupportAction() {
@@ -66,7 +66,7 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
 
     @objc private func handlePreferencesAction() {
         NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
-        NSApp.activate(ignoringOtherApps: true)
+        bringAppToFront()
     }
 
     @objc private func handleSubmitBugAction() {
@@ -75,11 +75,13 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
                 .frame(width: 300, height: 200, alignment: .topLeading)
                 .padding(30)
         }
+        bringAppToFront()
     }
 
     @objc private func handleQuickStartAction() {
         SwiftUIWindow.open { _ in
             WelcomeView().welcomeWindowStyles()
         }
+        bringAppToFront()
     }
 }
