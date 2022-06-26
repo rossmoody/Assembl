@@ -28,9 +28,6 @@
 		CE8C3E482845425600BFE461 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C3E472845425600BFE461 /* Empty.swift */; };
 		CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71958282CC0C6006F889E /* AssemblApp.swift */; };
 		CEA7195D282CC0C9006F889E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7195C282CC0C9006F889E /* Assets.xcassets */; };
-		CEA7196B282CC0C9006F889E /* AssemblTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7196A282CC0C9006F889E /* AssemblTests.swift */; };
-		CEA71975282CC0C9006F889E /* AssemblUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71974282CC0C9006F889E /* AssemblUITests.swift */; };
-		CEA71977282CC0C9006F889E /* AssemblUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */; };
 		CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA71989282DFAB5006F889E /* AppDelegate.swift */; };
 		CEBDCCB4283DE8080083AFBF /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDCCB3283DE8080083AFBF /* GeneralView.swift */; };
 		CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4A5C42830755A00E2C5CB /* Utilities.swift */; };
@@ -76,10 +73,7 @@
 		CEA7195C282CC0C9006F889E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEA71961282CC0C9006F889E /* Assembl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Assembl.entitlements; sourceTree = "<group>"; };
 		CEA71966282CC0C9006F889E /* AssemblTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssemblTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEA7196A282CC0C9006F889E /* AssemblTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblTests.swift; sourceTree = "<group>"; };
 		CEA71970282CC0C9006F889E /* AssemblUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssemblUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEA71974282CC0C9006F889E /* AssemblUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblUITests.swift; sourceTree = "<group>"; };
-		CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEA71989282DFAB5006F889E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBDCCB0283C818C0083AFBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEBDCCB3283DE8080083AFBF /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
@@ -161,8 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA71957282CC0C6006F889E /* Assembl */,
-				CEA71973282CC0C9006F889E /* AssemblUITests */,
-				CEA71969282CC0C9006F889E /* AssemblTests */,
 				CE6243962845429E004965D5 /* BuildTools */,
 				CEA71956282CC0C6006F889E /* Products */,
 			);
@@ -198,23 +190,6 @@
 				CE327CD32837F16F0001A05B /* WindowMover.swift */,
 			);
 			path = Assembl;
-			sourceTree = "<group>";
-		};
-		CEA71969282CC0C9006F889E /* AssemblTests */ = {
-			isa = PBXGroup;
-			children = (
-				CEA7196A282CC0C9006F889E /* AssemblTests.swift */,
-			);
-			path = AssemblTests;
-			sourceTree = "<group>";
-		};
-		CEA71973282CC0C9006F889E /* AssemblUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CEA71974282CC0C9006F889E /* AssemblUITests.swift */,
-				CEA71976282CC0C9006F889E /* AssemblUITestsLaunchTests.swift */,
-			);
-			path = AssemblUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,7 +399,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA7196B282CC0C9006F889E /* AssemblTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,8 +406,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA71977282CC0C9006F889E /* AssemblUITestsLaunchTests.swift in Sources */,
-				CEA71975282CC0C9006F889E /* AssemblUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
