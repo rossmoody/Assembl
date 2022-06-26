@@ -11,6 +11,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_: Notification) {
         _ = statusItem.button
+        _ = accessibilityPermission
         setupEvents()
     }
 

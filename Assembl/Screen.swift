@@ -27,13 +27,13 @@ class Screen {
                                           kAXWindowsAttribute as CFString,
                                           &applicationWindows)
 
-            guard let applicationWindows = applicationWindows as? [AXUIElement],
-                  !applicationWindows.isEmpty
+            guard let windows = applicationWindows as? [AXUIElement],
+                  !windows.isEmpty
             else {
                 continue
             }
 
-            for window in applicationWindows {
+            for window in windows {
                 let element = A11yElement(window: window, processId: processId)
 
                 if element.isWindow,

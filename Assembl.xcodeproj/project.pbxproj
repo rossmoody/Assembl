@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE0B907D283712A8007E960F /* KeyboardShortcuts */; };
-		CE24DD7B2867CCE50025EB6A /* WelcomeFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD742867CCE50025EB6A /* WelcomeFooter.swift */; };
-		CE24DD7C2867CCE50025EB6A /* WelcomeVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD752867CCE50025EB6A /* WelcomeVideoPlayer.swift */; };
-		CE24DD7D2867CCE50025EB6A /* WelcomeGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD762867CCE50025EB6A /* WelcomeGraphic.swift */; };
-		CE24DD7E2867CCE50025EB6A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD772867CCE50025EB6A /* WelcomeView.swift */; };
-		CE24DD7F2867CCE50025EB6A /* WelcomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD782867CCE50025EB6A /* WelcomeContent.swift */; };
-		CE24DD802867CCE50025EB6A /* ProgressDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD792867CCE50025EB6A /* ProgressDot.swift */; };
 		CE24DD812867CCE50025EB6A /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD7A2867CCE50025EB6A /* Styles.swift */; };
 		CE2BCB1A284D3306002656DA /* SubmitBugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BCB19284D3306002656DA /* SubmitBugView.swift */; };
 		CE2BCB1D284D382F002656DA /* SwiftUIWindow in Frameworks */ = {isa = PBXBuildFile; productRef = CE2BCB1C284D382F002656DA /* SwiftUIWindow */; };
@@ -22,6 +16,12 @@
 		CE3626AB284076CB00EC3E55 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = CE3626AA284076CB00EC3E55 /* LaunchAtLogin */; };
 		CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3626AE2841D81300EC3E55 /* SettingsView.swift */; };
 		CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C533C283042A1008E02B8 /* KeyboardShortcuts */; };
+		CE3C96F72868E72F0004DC21 /* WelcomeVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F12868E72F0004DC21 /* WelcomeVideoPlayer.swift */; };
+		CE3C96F82868E72F0004DC21 /* WelcomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F22868E72F0004DC21 /* WelcomeContent.swift */; };
+		CE3C96F92868E72F0004DC21 /* ProgressDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F32868E72F0004DC21 /* ProgressDot.swift */; };
+		CE3C96FA2868E72F0004DC21 /* WelcomeGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F42868E72F0004DC21 /* WelcomeGraphic.swift */; };
+		CE3C96FB2868E72F0004DC21 /* WelcomeFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F52868E72F0004DC21 /* WelcomeFooter.swift */; };
+		CE3C96FC2868E72F0004DC21 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F62868E72F0004DC21 /* WelcomeView.swift */; };
 		CE49FD282830B73700B0B72A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49FD272830B73700B0B72A /* Constants.swift */; };
 		CE49FD3028316FE500B0B72A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE49FD2F28316FE500B0B72A /* Localizable.strings */; };
 		CE52BEC9283AE4020085A204 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52BEC8283AE4020085A204 /* Screen.swift */; };
@@ -55,17 +55,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE24DD742867CCE50025EB6A /* WelcomeFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeFooter.swift; sourceTree = "<group>"; };
-		CE24DD752867CCE50025EB6A /* WelcomeVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVideoPlayer.swift; sourceTree = "<group>"; };
-		CE24DD762867CCE50025EB6A /* WelcomeGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeGraphic.swift; sourceTree = "<group>"; };
-		CE24DD772867CCE50025EB6A /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		CE24DD782867CCE50025EB6A /* WelcomeContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeContent.swift; sourceTree = "<group>"; };
-		CE24DD792867CCE50025EB6A /* ProgressDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressDot.swift; sourceTree = "<group>"; };
 		CE24DD7A2867CCE50025EB6A /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		CE2BCB19284D3306002656DA /* SubmitBugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBugView.swift; sourceTree = "<group>"; };
 		CE327CCE28372C2C0001A05B /* A11yElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yElement.swift; sourceTree = "<group>"; };
 		CE327CD32837F16F0001A05B /* WindowMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMover.swift; sourceTree = "<group>"; };
 		CE3626AE2841D81300EC3E55 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CE3C96F12868E72F0004DC21 /* WelcomeVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeVideoPlayer.swift; path = Assembl/Welcome/WelcomeVideoPlayer.swift; sourceTree = SOURCE_ROOT; };
+		CE3C96F22868E72F0004DC21 /* WelcomeContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeContent.swift; path = Assembl/Welcome/WelcomeContent.swift; sourceTree = SOURCE_ROOT; };
+		CE3C96F32868E72F0004DC21 /* ProgressDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressDot.swift; path = Assembl/Welcome/ProgressDot.swift; sourceTree = SOURCE_ROOT; };
+		CE3C96F42868E72F0004DC21 /* WelcomeGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeGraphic.swift; path = Assembl/Welcome/WelcomeGraphic.swift; sourceTree = SOURCE_ROOT; };
+		CE3C96F52868E72F0004DC21 /* WelcomeFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeFooter.swift; path = Assembl/Welcome/WelcomeFooter.swift; sourceTree = SOURCE_ROOT; };
+		CE3C96F62868E72F0004DC21 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeView.swift; path = Assembl/Welcome/WelcomeView.swift; sourceTree = SOURCE_ROOT; };
 		CE49FD272830B73700B0B72A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE49FD2F28316FE500B0B72A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CE52BEC8283AE4020085A204 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -119,12 +119,12 @@
 		CE24DD732867CCE50025EB6A /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				CE24DD742867CCE50025EB6A /* WelcomeFooter.swift */,
-				CE24DD752867CCE50025EB6A /* WelcomeVideoPlayer.swift */,
-				CE24DD762867CCE50025EB6A /* WelcomeGraphic.swift */,
-				CE24DD772867CCE50025EB6A /* WelcomeView.swift */,
-				CE24DD782867CCE50025EB6A /* WelcomeContent.swift */,
-				CE24DD792867CCE50025EB6A /* ProgressDot.swift */,
+				CE3C96F32868E72F0004DC21 /* ProgressDot.swift */,
+				CE3C96F22868E72F0004DC21 /* WelcomeContent.swift */,
+				CE3C96F52868E72F0004DC21 /* WelcomeFooter.swift */,
+				CE3C96F42868E72F0004DC21 /* WelcomeGraphic.swift */,
+				CE3C96F12868E72F0004DC21 /* WelcomeVideoPlayer.swift */,
+				CE3C96F62868E72F0004DC21 /* WelcomeView.swift */,
 			);
 			name = Welcome;
 			path = ../Welcome;
@@ -398,25 +398,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3C96FA2868E72F0004DC21 /* WelcomeGraphic.swift in Sources */,
+				CE3C96F82868E72F0004DC21 /* WelcomeContent.swift in Sources */,
 				CEA71959282CC0C6006F889E /* AssemblApp.swift in Sources */,
+				CE3C96FB2868E72F0004DC21 /* WelcomeFooter.swift in Sources */,
+				CE3C96F92868E72F0004DC21 /* ProgressDot.swift in Sources */,
 				CEA7198A282DFAB5006F889E /* AppDelegate.swift in Sources */,
-				CE24DD7E2867CCE50025EB6A /* WelcomeView.swift in Sources */,
 				CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */,
 				CEC4A5C52830755A00E2C5CB /* Utilities.swift in Sources */,
-				CE24DD7B2867CCE50025EB6A /* WelcomeFooter.swift in Sources */,
 				CEBDCCB4283DE8080083AFBF /* GeneralView.swift in Sources */,
-				CE24DD7F2867CCE50025EB6A /* WelcomeContent.swift in Sources */,
 				CE52BEC9283AE4020085A204 /* Screen.swift in Sources */,
-				CE24DD7C2867CCE50025EB6A /* WelcomeVideoPlayer.swift in Sources */,
 				CEC4A5C7283095DB00E2C5CB /* StatusMenu.swift in Sources */,
 				CE8C3E482845425600BFE461 /* Empty.swift in Sources */,
-				CE24DD7D2867CCE50025EB6A /* WelcomeGraphic.swift in Sources */,
 				CE24DD812867CCE50025EB6A /* Styles.swift in Sources */,
 				CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */,
+				CE3C96FC2868E72F0004DC21 /* WelcomeView.swift in Sources */,
 				CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
-				CE24DD802867CCE50025EB6A /* ProgressDot.swift in Sources */,
 				CE2BCB1A284D3306002656DA /* SubmitBugView.swift in Sources */,
+				CE3C96F72868E72F0004DC21 /* WelcomeVideoPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +488,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -507,7 +507,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -550,9 +550,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = "[com.apple.systempreferences]";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -565,7 +566,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -598,7 +599,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = rossmoody.Assembl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -630,7 +631,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = rossmoody.Assembl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
