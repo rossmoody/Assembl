@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE0B907E283712A8007E960F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE0B907D283712A8007E960F /* KeyboardShortcuts */; };
 		CE24DD812867CCE50025EB6A /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DD7A2867CCE50025EB6A /* Styles.swift */; };
-		CE2BCB1A284D3306002656DA /* SubmitBugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BCB19284D3306002656DA /* SubmitBugView.swift */; };
 		CE2BCB1D284D382F002656DA /* SwiftUIWindow in Frameworks */ = {isa = PBXBuildFile; productRef = CE2BCB1C284D382F002656DA /* SwiftUIWindow */; };
 		CE327CCF28372C2C0001A05B /* A11yElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CCE28372C2C0001A05B /* A11yElement.swift */; };
 		CE327CD42837F16F0001A05B /* WindowMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE327CD32837F16F0001A05B /* WindowMover.swift */; };
@@ -53,7 +52,6 @@
 
 /* Begin PBXFileReference section */
 		CE24DD7A2867CCE50025EB6A /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
-		CE2BCB19284D3306002656DA /* SubmitBugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBugView.swift; sourceTree = "<group>"; };
 		CE327CCE28372C2C0001A05B /* A11yElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yElement.swift; sourceTree = "<group>"; };
 		CE327CD32837F16F0001A05B /* WindowMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMover.swift; sourceTree = "<group>"; };
 		CE3626AE2841D81300EC3E55 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 		CE45FACF284D629B00F3B0E8 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				CE2BCB19284D3306002656DA /* SubmitBugView.swift */,
 				CEC4A5C6283095DB00E2C5CB /* StatusMenu.swift */,
 			);
 			path = Menu;
@@ -390,7 +387,6 @@
 				CE3C96FC2868E72F0004DC21 /* WelcomeView.swift in Sources */,
 				CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
-				CE2BCB1A284D3306002656DA /* SubmitBugView.swift in Sources */,
 				CE3C96F72868E72F0004DC21 /* WelcomeVideoPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

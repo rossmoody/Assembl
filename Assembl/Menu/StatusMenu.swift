@@ -61,7 +61,7 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
     }
 
     @objc private func handleSupportAction() {
-        openURL(URL(string: "https://rossmoody.com")!)
+        openURL(URL(string: "https://assembl.app")!)
     }
 
     @objc private func handlePreferencesAction() {
@@ -70,11 +70,7 @@ final class StatusMenu: NSMenu, NSMenuDelegate {
     }
 
     @objc private func handleSubmitBugAction() {
-        SwiftUIWindow.open { _ in
-            SubmitFeedback()
-                .submitFeedbackStyles()
-        }
-        bringAppToFront()
+        openURL(URL(string: "https://github.com/rossmoody/Assembl/issues")!)
     }
 
     @objc private func handleQuickStartAction() {
