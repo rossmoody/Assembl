@@ -1,3 +1,5 @@
+import KeyboardShortcuts
+import LaunchAtLogin
 import SwiftUI
 
 struct HeadlineDescription: View {
@@ -24,16 +26,23 @@ struct WelcomeContent: View {
     var body: some View {
         switch progress {
         case 1:
-            HeadlineDescription(title: "Enable permissions",
-                                description: "Assembl requires Accessibility permissions in order to move and resize windows. Go to System Preferences > Security & Privacy > Privacy > Accessibility and ensure Assembl is checked. If the items are disabled, click the padlock and enter your password.")
+            HeadlineDescription(title: loc("WELCOME_PERMISSION_HEADLINE", "Permission headline"),
+                                description: loc("WELCOME_PERMISSION_DESCRIPTION", "Permission description"))
 
         case 2:
-            HeadlineDescription(title: "Launch on login",
-                                description: "Assembl runs in the background and isn’t available in the dock by default. To save yourself trips to the Applications folder, it is advised to launch automatically during login.")
+            HeadlineDescription(title: loc("WELCOME_LOGIN_HEADLINE", "Login headline"),
+                                description: loc("WELCOME_LOGIN_DESCRIPTION", "Login description"))
+
+            LaunchAtLogin.Toggle {
+                Text("Launch at login").padding(.top)
+            }
 
         default:
-            HeadlineDescription(title: "Set a keyboard shortcut",
-                                description: "Assembl uses this shortcut to organize available windows from the screen your mouse cursor is on. It can be changed later in Preferences.")
+            HeadlineDescription(title: loc("WELCOME_SHORTCUT_HEADLINE", "Shortcut headline"),
+                                description: loc("WELCOME_SHORTCUT_DESCRIPTION", "Shortcut description"))
+
+            KeyboardShortcuts.Recorder("", name: .shortcut)
+                .padding(.top)
         }
     }
 }

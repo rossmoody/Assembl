@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct WelcomeFooter: View {
-    @Environment(\.dismiss) private var dismiss
-
     @Binding var progress: Int
 
     var body: some View {
@@ -22,8 +20,10 @@ struct WelcomeFooter: View {
                 Button("Next", action: handleNext)
                     .linkStyles()
             } else {
-                Button("Done", action: { dismiss() })
-                    .linkStyles()
+                Button("Done", action: {
+                    NSApplication.shared.keyWindow?.close()
+                })
+                .linkStyles()
             }
         }
     }

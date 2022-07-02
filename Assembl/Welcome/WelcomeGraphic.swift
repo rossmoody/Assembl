@@ -6,19 +6,22 @@ struct WelcomeGraphic: View {
     var body: some View {
         switch progress {
         case 1:
-            Rectangle()
-                .frame(width: 480, height: 240, alignment: .top)
-                .foregroundColor(.blue)
+            Image("welcome_permissions")
+                .frame(width: 480, height: 240)
 
         case 2:
-            Rectangle()
-                .frame(width: 480, height: 240, alignment: .top)
-                .foregroundColor(.green)
+            Image("welcome_login")
+                .frame(width: 480, height: 240)
 
         default:
-            Rectangle()
-                .frame(width: 480, height: 240, alignment: .top)
-                .foregroundColor(.green)
+            Image("welcome_shortcut")
+                .frame(width: 480, height: 240)
         }
+    }
+}
+
+struct WelcomeGraphicPreview: PreviewProvider {
+    static var previews: some View {
+        WelcomeGraphic(progress: 1)
     }
 }

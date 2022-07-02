@@ -5,3 +5,9 @@
 "SUPPORT" = "Get support";
 "QUIT" = "Quit";
 "SUBMIT_BUG" = "Submit a bug";
+"WELCOME_PERMISSION_HEADLINE" = "Enable permissions";
+"WELCOME_PERMISSION_DESCRIPTION" = "Assembl requires Accessibility permissions in order to move and resize windows. Go to System Preferences > Security & Privacy > Privacy > Accessibility and ensure Assembl is checked. If the items are disabled, click the padlock and enter your password.";
+"WELCOME_LOGIN_HEADLINE" = "Launch on login";
+"WELCOME_LOGIN_DESCRIPTION" = "Assembl runs in the background and isn’t available in the dock by default. To save yourself trips to the Applications folder, it is advised to launch automatically during login.";
+"WELCOME_SHORTCUT_HEADLINE" = "Set a keyboard shortcut";
+"WELCOME_SHORTCUT_DESCRIPTION" = "Assembl uses this shortcut to organize available windows from the screen your mouse cursor is on. It can be changed later in Preferences.";

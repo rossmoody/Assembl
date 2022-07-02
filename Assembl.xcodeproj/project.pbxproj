@@ -15,7 +15,6 @@
 		CE3626AB284076CB00EC3E55 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = CE3626AA284076CB00EC3E55 /* LaunchAtLogin */; };
 		CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3626AE2841D81300EC3E55 /* SettingsView.swift */; };
 		CE3C533D283042A1008E02B8 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C533C283042A1008E02B8 /* KeyboardShortcuts */; };
-		CE3C96F72868E72F0004DC21 /* WelcomeVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F12868E72F0004DC21 /* WelcomeVideoPlayer.swift */; };
 		CE3C96F82868E72F0004DC21 /* WelcomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F22868E72F0004DC21 /* WelcomeContent.swift */; };
 		CE3C96F92868E72F0004DC21 /* ProgressDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F32868E72F0004DC21 /* ProgressDot.swift */; };
 		CE3C96FA2868E72F0004DC21 /* WelcomeGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C96F42868E72F0004DC21 /* WelcomeGraphic.swift */; };
@@ -55,7 +54,6 @@
 		CE327CCE28372C2C0001A05B /* A11yElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yElement.swift; sourceTree = "<group>"; };
 		CE327CD32837F16F0001A05B /* WindowMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMover.swift; sourceTree = "<group>"; };
 		CE3626AE2841D81300EC3E55 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		CE3C96F12868E72F0004DC21 /* WelcomeVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeVideoPlayer.swift; path = Assembl/Welcome/WelcomeVideoPlayer.swift; sourceTree = SOURCE_ROOT; };
 		CE3C96F22868E72F0004DC21 /* WelcomeContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeContent.swift; path = Assembl/Welcome/WelcomeContent.swift; sourceTree = SOURCE_ROOT; };
 		CE3C96F32868E72F0004DC21 /* ProgressDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressDot.swift; path = Assembl/Welcome/ProgressDot.swift; sourceTree = SOURCE_ROOT; };
 		CE3C96F42868E72F0004DC21 /* WelcomeGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeGraphic.swift; path = Assembl/Welcome/WelcomeGraphic.swift; sourceTree = SOURCE_ROOT; };
@@ -115,7 +113,6 @@
 				CE3C96F22868E72F0004DC21 /* WelcomeContent.swift */,
 				CE3C96F52868E72F0004DC21 /* WelcomeFooter.swift */,
 				CE3C96F42868E72F0004DC21 /* WelcomeGraphic.swift */,
-				CE3C96F12868E72F0004DC21 /* WelcomeVideoPlayer.swift */,
 				CE3C96F62868E72F0004DC21 /* WelcomeView.swift */,
 			);
 			name = Welcome;
@@ -387,7 +384,6 @@
 				CE3C96FC2868E72F0004DC21 /* WelcomeView.swift in Sources */,
 				CE3626AF2841D81300EC3E55 /* SettingsView.swift in Sources */,
 				CE49FD282830B73700B0B72A /* Constants.swift in Sources */,
-				CE3C96F72868E72F0004DC21 /* WelcomeVideoPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
