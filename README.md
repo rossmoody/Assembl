@@ -17,7 +17,9 @@
 
 ## Download Assembl
 
-[Download Assembl for macOS](https://github.com/rossmoody/Assembl/raw/main/Release/Assembl.dmg). Requires macOS v12.0 or later.
+### 🚀 [Download Assembl for macOS](https://github.com/rossmoody/Assembl/raw/main/Release/Assembl.dmg)
+
+Requires macOS v12.0 or later.
 
 ## FAQ
 
@@ -64,5 +66,7 @@ In testing, overlapping windows felt like the best user experiences while still 
 - [SwiftUIWindow](https://github.com/mortenjust/SwiftUIWindow) - Open a new macOS (10.12+) window with SwiftUI contents.
 
 ## Links
+
+I like making things. Check out what I'm up to lately:
 
 - [More apps by me](https://rossmoody.com)
