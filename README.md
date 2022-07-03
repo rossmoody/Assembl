@@ -13,14 +13,11 @@
 
 - Grid, resize, and rearrange all windows on a screen automatically with one keyboard shorcut
 - Maximize window sizes on the screen using all available screen real estate
-- Works with multiple monitors
-- Gather and organize windows from all monitors _(Coming soon)_
+- Gather and organize visible windows from multiple monitors _(Coming soon)_
 
-## Download
+## Download Assembl
 
-### Download Assembl for macOS
-
-Requires macOS 12 or later.
+[Download Assembl for macOS](https://github.com/rossmoody/Assembl/releases). Requires macOS v12.0 or later.
 
 ## FAQ
 

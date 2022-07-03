@@ -7,18 +7,18 @@ struct GeneralView: View {
 
     var body: some View {
         Form {
-            KeyboardShortcuts.Recorder("Keyboard shortcut", name: .shortcut)
+            KeyboardShortcuts.Recorder(loc("PREF_SHORTCUT_LABEL", ""), name: .shortcut)
 
-            Text("This keyboard shortcut will assemble the windows on the screen your mouse is currently on.")
+            Text(loc("PREF_SHORTCUT_DESCRIPTION", "Description of what the app does when shortcut pressed."))
                 .font(.caption2)
                 .foregroundColor(Color.gray)
                 .multilineTextAlignment(.leading)
 
             Divider().padding(.vertical, 10)
 
-            LaunchAtLogin.Toggle { Text("Launch at login") }
+            LaunchAtLogin.Toggle { Text(loc("PREF_LAUNCH_LOGIN", "")) }
 
-            Toggle("Show in Dock", isOn: $showDockIcon)
+            Toggle(loc("PREF_DOCK", ""), isOn: $showDockIcon)
                 .onAppear {
                     setDockIcon(state: showDockIcon)
                 }

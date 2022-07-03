@@ -26,8 +26,11 @@ struct WelcomeContent: View {
     var body: some View {
         switch progress {
         case 1:
-            HeadlineDescription(title: loc("WELCOME_PERMISSION_HEADLINE", "Permission headline"),
-                                description: loc("WELCOME_PERMISSION_DESCRIPTION", "Permission description"))
+            HeadlineDescription(title: loc("WELCOME_SHORTCUT_HEADLINE", ""),
+                                description: loc("WELCOME_SHORTCUT_DESCRIPTION", ""))
+
+            KeyboardShortcuts.Recorder("", name: .shortcut)
+                .padding(.top)
 
         case 2:
             HeadlineDescription(title: loc("WELCOME_LOGIN_HEADLINE", "Login headline"),
@@ -38,11 +41,8 @@ struct WelcomeContent: View {
             }
 
         default:
-            HeadlineDescription(title: loc("WELCOME_SHORTCUT_HEADLINE", "Shortcut headline"),
-                                description: loc("WELCOME_SHORTCUT_DESCRIPTION", "Shortcut description"))
-
-            KeyboardShortcuts.Recorder("", name: .shortcut)
-                .padding(.top)
+            HeadlineDescription(title: loc("WELCOME_PERMISSION_HEADLINE", ""),
+                                description: loc("WELCOME_PERMISSION_DESCRIPTION", ""))
         }
     }
 }

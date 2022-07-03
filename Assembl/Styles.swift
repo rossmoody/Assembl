@@ -51,7 +51,7 @@ extension View {
     }
 
     func welcomeWindowStyles() -> some View {
-        frame(width: 520, height: 580, alignment: .top)
+        frame(width: 520, height: 540, alignment: .top)
     }
 
     func settingsWindowStyles() -> some View {

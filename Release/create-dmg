@@ -1,0 +1,16 @@
+#!/bin/sh
+
+test -f Assembl.dmg && rm Assembl.dmg
+
+create-dmg \
+  --volname "Assembl" \
+  --volicon "icon.icns" \
+  --background "installer_background.png" \
+  --window-pos 200 120 \
+  --window-size 800 400 \
+  --icon-size 150 \
+  --icon "Assembl.app" 200 180 \
+  --hide-extension "Assembl.app" \
+  --app-drop-link 615 180 \
+  "Assembl.dmg" \
+  "src/"

@@ -6,7 +6,7 @@ struct WelcomeGraphic: View {
     var body: some View {
         switch progress {
         case 1:
-            Image("welcome_permissions")
+            Image("welcome_shortcut")
                 .frame(width: 480, height: 240)
 
         case 2:
@@ -14,7 +14,7 @@ struct WelcomeGraphic: View {
                 .frame(width: 480, height: 240)
 
         default:
-            Image("welcome_shortcut")
+            Image("welcome_permissions")
                 .frame(width: 480, height: 240)
         }
     }

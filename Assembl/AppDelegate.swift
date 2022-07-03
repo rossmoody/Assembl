@@ -11,8 +11,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_: Notification) {
         _ = statusItem.button
-        _ = accessibilityPermission
         setupEvents()
+        onboardUser()
     }
 
     var accessibilityPermission: Bool {
@@ -28,7 +28,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func onboardUser() {
-        let key = "isFirstLaunch"
+        let key = "firstLaunch"
+
+        _ = accessibilityPermission
+
         if UserDefaults.standard.bool(forKey: key) == false {
             UserDefaults.standard.set(true, forKey: key)
             showWelcomeExperience()
@@ -39,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SwiftUIWindow.open { _ in
             WelcomeView().welcomeWindowStyles()
         }
+
         bringAppToFront()
     }
 }

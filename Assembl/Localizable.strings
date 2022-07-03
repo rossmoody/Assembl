@@ -11,3 +11,7 @@
 "WELCOME_LOGIN_DESCRIPTION" = "Assembl runs in the background and isn’t available in the dock by default. To save yourself trips to the Applications folder, it is advised to launch automatically during login.";
 "WELCOME_SHORTCUT_HEADLINE" = "Set a keyboard shortcut";
 "WELCOME_SHORTCUT_DESCRIPTION" = "Assembl uses this shortcut to organize available windows from the screen your mouse cursor is on. It can be changed later in Preferences.";
+"PREF_SHORTCUT_DESCRIPTION" = "This keyboard shortcut will assemble the windows on the screen your mouse is currently on.";
+"PREF_SHORTCUT_LABEL" = "Keyboard shortcut";
+"PREF_LAUNCH_LOGIN" = "Launch at login";
+"PREF_DOCK" = "Show in Dock";
