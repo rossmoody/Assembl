@@ -31,17 +31,18 @@ I wanted an app where I press one key and have all my windows organized. So, thi
 
 I personally found it tedious to organize my windows one at a time the way Rectangle and Magnet do. Plus, I could never remember the keyboard shortcuts. Assembl intentionally strips all that.
 
-The only improvement I may make to this app is the experience of organizing all windows at once, with one keyboard shortcut, to one screen.
+So, the only improvements I will consider would be ones that improve the experience of organizing all windows at once, with one keyboard shortcut, to one screen.
 
 This may include:
 
 - Gather all windows from all screens instead of just the screen the mouse is on
 - Reset all the windows to their previous positions and sizes
 - Ignore selected screens from being queried
+- Tiling screens like folder tabs vs gridding them like stacked boxes
 
 ### Why isn't Assembl on the App Store?
 
-Assembl, Magnet, and Rectangle all resize windows using the [Accessibility API](https://developer.apple.com/documentation/objectivec/nsobject/uiaccessibility). It's a hacky approach that developers have been doing since before 2010, but Apple doesn't provide any other way to manage windows. Since 2012, [Apple no longer allows the Accessibility API](https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/DesigningYourSandbox/DesigningYourSandbox.html) for apps in the App Store because they must be sandboxed.
+Assembl, Magnet, and Rectangle all resize windows using the [Accessibility API](https://developer.apple.com/documentation/objectivec/nsobject/uiaccessibility). It's a fairly hacky approach that developers have been doing since before 2010, but Apple doesn't provide any other way to manage windows. Since 2012, [Apple no longer allows the Accessibility API](https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/DesigningYourSandbox/DesigningYourSandbox.html) for apps in the App Store because they must be sandboxed.
 
 This is why Rectangle isn't in the App Store, as well. Magnet was approved by Apple before the change in 2012 and therefore gets to be the only window manager app in the App Store with no possibility for competition in perpetuity.
 
@@ -54,7 +55,7 @@ Assembl has to compete with quite a lot of variables when organizing windows. Th
 
 What Assembl does under the hood is try to make the window the correct size to fit perfectly with other windows in a grid. If Assembl can't resize the window to the intended size, the window gets put in the same position on the screen as if it is that size and allows it to overlap with other windows.
 
-In testing, overlapping windows felt like the best user experiences while still allowing access to the toolbars vs sacrificing other window sizes to accommodate for windows with large minimum widths/heights.
+In testing, overlapping windows felt like the best user experiences while still allowing access to the toolbars vs sacrificing other window sizes to accommodate for windows with large minimum widths/heights (or in cases where the window can't resize at all).
 
 ## Built with
 
