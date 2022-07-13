@@ -19,7 +19,7 @@
 
 ### 🚀 [Download Assembl for macOS](https://github.com/rossmoody/Assembl/raw/main/Release/Assembl.dmg)
 
-Requires macOS v12.0 or later.
+Requires macOS v11.5 or later.
 
 ## FAQ
 

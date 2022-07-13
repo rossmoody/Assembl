@@ -7,7 +7,6 @@ struct ProgressDot: View {
     var body: some View {
         Circle().frame(width: 10.0,
                        height: 10.0)
-            .background()
             .foregroundColor(isCurrent() ? .blue : .gray)
     }
 

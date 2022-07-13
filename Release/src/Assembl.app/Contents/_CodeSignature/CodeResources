@@ -10,7 +10,7 @@
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		RI2VoElBCkeBcoJsJkVIgCcsXTQ=
+		8oDnEqwSdUVTwVQbVTA5Q8QW4GI=
 		</data>
 		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Info.plist</key>
 		<data>
@@ -95,6 +95,15 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/libswift_Concurrency.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			2TqTcNh/VOPkSPl/WmIEGGfOKPw=
+			</data>
+			<key>requirement</key>
+			<string>anchor apple generic and identifier "com.apple.dt.runtime.swiftConcurrency" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "27P4L7HW7J")</string>
+		</dict>
 		<key>Library/LoginItems/LaunchAtLoginHelper.app</key>
 		<dict>
 			<key>cdhash</key>
@@ -115,7 +124,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eHVdv9ZgrtZJIKBfzuGKri+85JhjP33rrHO+6NpwuSI=
+			sCIAfnTEFmr1hkOGWs1x0U0uex5qJk7g/MracOeEwt0=
 			</data>
 		</dict>
 		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Info.plist</key>
