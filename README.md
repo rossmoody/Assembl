@@ -25,9 +25,13 @@ Requires macOS v11.5 or later.
 
 ### Isn't Assembl just like [Rectangle](https://rectangleapp.com/) and [Magnet](https://magnet.crowdcafe.com) but without as much functionality?
 
-Yes, no question. Rectangle and Magnet contain more functionality and customization options. Plus, I made this app almost entirely by dissecting the [open-source code from the Rectangle repository](https://github.com/rxhanson/Rectangle) to learn Swift (I usually write Typescript). So, it's mostly the same app with less functionality. _(Thank you, Rectangle folks, I learned so much)_.
+Yes, no question. Rectangle and Magnet contain more functionality and customization options. 
 
-I wanted an app where I press one key and have all my windows organized. So, this app could be for you if you want that one thing.
+Assembl strips all the complexity from those apps and provides one key that organizes all visible windows instead of one at a time. So, this app could be for you if you want a simplified window manager.
+
+Plus, I made this app almost entirely by dissecting the [open-source code from the Rectangle repository](https://github.com/rxhanson/Rectangle) to learn Swift (I usually write Typescript). So, it's mostly the same app with less functionality. _(Thank you, Rectangle folks, I learned so much)_.
+
+
 
 ### Does this mean you won't be adding new functionality?
 
